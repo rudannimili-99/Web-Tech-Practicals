@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Experiment 1</title>
+
+
+   <style>
+
+    /* ==============================
+       RESET & GENERAL
+    ============================== */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #eef2f7;
+        color: #1e293b;
+        line-height: 1.7;
+    }
+
+
+    /* ==============================
+       HEADER
+    ============================== */
+
+    header {
+        background: linear-gradient(
+            135deg,
+            #0f172a,
+            #1e3a5f
+        );
+
+        color: white;
+        text-align: center;
+
+        padding: 55px 20px;
+    }
+
+    header h1 {
+        font-size: 42px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+    }
+
+    header h2 {
+        font-size: 22px;
+        font-weight: 400;
+        color: #dbeafe;
+        margin-bottom: 5px;
+    }
+
+    header h3 {
+        font-size: 17px;
+        font-weight: 400;
+        color: #cbd5e1;
+    }
+
+
+    /* ==============================
+       PROFILE IMAGE
+    ============================== */
+
+    .profile-image {
+        width: 140px;
+        height: 140px;
+
+        object-fit: cover;
+        border-radius: 50%;
+
+        border: 5px solid white;
+
+        margin: 25px 0 10px;
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.25);
+    }
+
+
+    /* ==============================
+       MAIN CONTAINER
+    ============================== */
+
+    .container {
+        width: 90%;
+        max-width: 1000px;
+
+        margin: 45px auto;
+    }
+
+
+    /* ==============================
+       SECTION CARDS
+    ============================== */
+
+    .section {
+        background: #ffffff;
+
+        padding: 32px;
+
+        margin-bottom: 25px;
+
+        border-radius: 12px;
+
+        border: 1px solid #dbe3ec;
+
+        box-shadow:
+            0 5px 18px rgba(15, 23, 42, 0.07);
+
+        transition: 0.25s ease;
+    }
+
+    .section:hover {
+        box-shadow:
+            0 8px 25px rgba(15, 23, 42, 0.11);
+    }
+
+    .section h4 {
+        color: #1e3a5f;
+
+        font-size: 24px;
+
+        margin-bottom: 20px;
+
+        padding-bottom: 10px;
+
+        border-bottom: 2px solid #e2e8f0;
+
+        position: relative;
+    }
+
+    .section h4::after {
+        content: "";
+
+        position: absolute;
+
+        bottom: -2px;
+        left: 0;
+
+        width: 55px;
+        height: 2px;
+
+        background: #2563eb;
+    }
+
+
+    /* ==============================
+       ABOUT ME
+    ============================== */
+
+    .about p {
+        color: #475569;
+        margin-bottom: 15px;
+    }
+
+    strong {
+        color: #1e3a5f;
+    }
+
+    em {
+        color: #2563eb;
+    }
+
+    mark {
+        background: #dbeafe;
+
+        color: #1e40af;
+
+        padding: 3px 7px;
+
+        border-radius: 4px;
+    }
+
+
+    /* ==============================
+       HORIZONTAL LINE
+    ============================== */
+
+    hr {
+        border: none;
+
+        height: 1px;
+
+        background: #dbe3ec;
+
+        margin: 30px 0;
+    }
+
+
+    /* ==============================
+       TECHNICAL SKILLS
+    ============================== */
+
+    .skills {
+        list-style: none;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 18px;
+    }
+
+    .skills li {
+        background: #f8fafc;
+
+        padding: 18px;
+
+        text-align: center;
+
+        border-radius: 10px;
+
+        border: 1px solid #dbe3ec;
+
+        color: #1e3a5f;
+
+        font-weight: 600;
+
+        transition: 0.25s ease;
+    }
+
+    .skills li:hover {
+        background: #eff6ff;
+
+        border-color: #93c5fd;
+
+        transform: translateY(-3px);
+    }
+
+
+    /* ==============================
+       SEMESTER PLAN
+    ============================== */
+
+    .semester {
+        padding-left: 25px;
+    }
+
+    .semester > li {
+        color: #1e3a5f;
+
+        font-weight: 600;
+
+        margin: 15px 0;
+    }
+
+    .semester ul {
+        margin-top: 8px;
+
+        padding-left: 25px;
+    }
+
+    .semester ul li {
+        color: #64748b;
+
+        font-weight: normal;
+
+        margin: 5px 0;
+    }
+
+
+    /* ==============================
+       GLOSSARY
+    ============================== */
+
+    dl {
+        display: grid;
+
+        gap: 12px;
+    }
+
+    dt {
+        background: #1e3a5f;
+
+        color: white;
+
+        padding: 10px 16px;
+
+        border-radius: 7px;
+
+        font-size: 17px;
+
+        font-weight: 600;
+    }
+
+    dd {
+        background: #f8fafc;
+
+        color: #64748b;
+
+        padding: 15px 18px;
+
+        margin-left: 15px;
+
+        border-left: 3px solid #2563eb;
+
+        border-radius: 0 7px 7px 0;
+    }
+
+
+    /* ==============================
+       USEFUL LINKS
+    ============================== */
+
+    .links {
+        list-style: none;
+
+        display: grid;
+
+        gap: 12px;
+    }
+
+    .links li a {
+        display: block;
+
+        padding: 14px 18px;
+
+        background: #f8fafc;
+
+        color: #1e3a5f;
+
+        text-decoration: none;
+
+        border: 1px solid #dbe3ec;
+
+        border-radius: 8px;
+
+        transition: 0.25s ease;
+    }
+
+    .links li a:hover {
+        background: #1e3a5f;
+
+        color: white;
+
+        border-color: #1e3a5f;
+
+        transform: translateX(4px);
+    }
+
+
+    /* ==============================
+       FOOTER
+    ============================== */
+
+    footer {
+        background: #0f172a;
+
+        color: #cbd5e1;
+
+        text-align: center;
+
+        padding: 25px;
+    }
+
+    footer h6 {
+        font-size: 14px;
+
+        font-weight: 400;
+    }
+
+
+    /* ==============================
+       RESPONSIVE DESIGN
+    ============================== */
+
+    @media (max-width: 700px) {
+
+        header h1 {
+            font-size: 34px;
+        }
+
+        header h2 {
+            font-size: 19px;
+        }
+
+        .skills {
+            grid-template-columns: 1fr;
+        }
+
+        .container {
+            width: 94%;
+        }
+
+        .section {
+            padding: 24px;
+        }
+
+    }
+
+</style>
+
+</head>
+
+
+<body id="top">
+
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            Mili Atulbhai Rudani
+        </h1>
+
+        <h2>
+            B.Tech Computer Science &amp; Engineering
+        </h2>
+
+        <h3>
+            JG University, Ahmedabad
+        </h3>
+
+
+        <!-- Image with width, height and meaningful alt text -->
+
+        <img
+            src="C:\Users\rudan\Downloads\Professional Headshot with Ponytail.png"
+            alt="Profile illustration of Mili Atulbhai Rudani"
+            width="140"
+            height="140"
+            class="profile-image"
+        >
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main class="container">
+
+
+        <!-- About Me -->
+
+        <section class="section about">
+
+            <h4>
+                About Me
+            </h4>
+
+            <p>
+
+                I am a
+                <strong>second-year engineering student</strong>
+                who enjoys building websites.
+
+                I am currently learning
+                <em>HTML, CSS and JavaScript</em>
+                as part of the
+                <mark>Web Technologies</mark>
+                integrated course.
+
+            </p>
+
+
+            <p>
+
+                My goal is to become a
+                full-stack developer.
+
+                <br>
+
+                I practise coding every day.
+
+            </p>
+
+            <hr>
+
+        </section>
+
+
+        <!-- Technical Skills -->
+
+        <section class="section">
+
+            <h4>
+                Technical Skills
+            </h4>
+
+            <ul class="skills">
+
+                <li>
+                    HTML5 &amp; CSS3
+                </li>
+
+                <li>
+                    JavaScript (ES6)
+                </li>
+
+                <li>
+                    Git &amp; GitHub
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- Semester Plan -->
+
+        <section class="section">
+
+            <h4>
+                Semester Plan
+            </h4>
+
+            <ol type="1" class="semester">
+
+                <li>
+
+                    Learn web page structure
+
+                    <ul>
+
+                        <li>
+                            Headings and paragraphs
+                        </li>
+
+                        <li>
+                            Lists, links and images
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <li>
+                    Style pages with CSS
+                </li>
+
+
+                <li>
+                    Add interactivity with JavaScript
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- Description List -->
+
+        <section class="section">
+
+            <h4>
+                Glossary
+            </h4>
+
+            <dl>
+
+                <dt>
+                    HTML
+                </dt>
+
+                <dd>
+                    HyperText Markup Language
+                    &mdash; defines the structure of a web page.
+                </dd>
+
+
+                <dt>
+                    URL
+                </dt>
+
+                <dd>
+                    Uniform Resource Locator
+                    &mdash; the address of a resource on the web.
+                </dd>
+
+            </dl>
+
+        </section>
+
+
+        <!-- Useful Links -->
+
+        <section class="section">
+
+            <h4 id="contact">
+                Useful Links
+            </h4>
+
+            <ul class="links">
+
+                <li>
+
+                    <a
+                        href="https://developer.mozilla.org/"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        MDN Web Docs
+                        (opens in new tab)
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="mailto:mili.atubhai@example.com">
+
+                        Send me an email
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#top">
+
+                        Back to top
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h6>
+            &copy; 2026 Mili Atulbhai Rudani. All rights reserved.
+        </h6>
+
+    </footer>
+
+
+</body>
+
+</html>
