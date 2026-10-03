@@ -1,0 +1,861 @@
+2a<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Workshop Registration | Experiment 2</title>
+
+
+    <style>
+
+        /* =========================
+           GENERAL STYLING
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e8eef7,
+                    #f8fafc
+                );
+
+            color: #1e293b;
+
+            line-height: 1.6;
+
+            padding: 40px 20px;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        body::before {
+            content: "";
+
+            display: block;
+
+            width: 80px;
+            height: 5px;
+
+            background: #2563eb;
+
+            margin: 0 auto 15px;
+
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           MAIN HEADING
+        ========================= */
+
+        h1 {
+            text-align: center;
+
+            color: #0f172a;
+
+            font-size: 38px;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        form {
+            width: 90%;
+            max-width: 850px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 10px 30px rgba(15, 23, 42, 0.10);
+        }
+
+
+        /* =========================
+           FIELDSET
+        ========================= */
+
+        fieldset {
+            border: 1px solid #d5deea;
+
+            border-radius: 12px;
+
+            padding: 25px;
+
+            margin-bottom: 25px;
+
+            background: #fbfdff;
+        }
+
+        legend {
+            background: #1e3a5f;
+
+            color: white;
+
+            padding: 8px 18px;
+
+            border-radius: 7px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FORM ROWS
+        ========================= */
+
+        p {
+            margin-bottom: 18px;
+        }
+
+        label {
+            font-weight: 600;
+
+            color: #334155;
+
+            margin-right: 8px;
+        }
+
+
+        /* =========================
+           TEXT INPUTS
+        ========================= */
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="number"],
+        select,
+        textarea {
+
+            padding: 11px 13px;
+
+            border: 1px solid #cbd5e1;
+
+            border-radius: 7px;
+
+            background: white;
+
+            color: #1e293b;
+
+            font-size: 14px;
+
+            outline: none;
+
+            transition: 0.2s;
+
+        }
+
+
+        input[type="text"],
+        input[type="email"] {
+            width: 60%;
+        }
+
+        input[type="date"] {
+            width: 180px;
+        }
+
+        input[type="tel"] {
+            width: 150px;
+        }
+
+        input[type="number"] {
+            width: 90px;
+        }
+
+        select {
+            width: 230px;
+        }
+
+
+        /* =========================
+           INPUT FOCUS
+        ========================= */
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            border-color: #2563eb;
+
+            box-shadow:
+                0 0 0 3px rgba(37, 99, 235, 0.10);
+        }
+
+
+        /* =========================
+           RADIO & CHECKBOX
+        ========================= */
+
+        input[type="radio"],
+        input[type="checkbox"] {
+
+            accent-color: #2563eb;
+
+            margin-left: 8px;
+
+            margin-right: 3px;
+        }
+
+
+        /* =========================
+           TEXTAREA
+        ========================= */
+
+        textarea {
+            width: 100%;
+
+            resize: vertical;
+
+            margin-top: 8px;
+
+            min-height: 90px;
+        }
+
+
+        /* =========================
+           FILE INPUT
+        ========================= */
+
+        input[type="file"] {
+
+            padding: 9px;
+
+            background: #f8fafc;
+
+            border: 1px solid #cbd5e1;
+
+            border-radius: 7px;
+
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        input[type="submit"],
+        input[type="reset"] {
+
+            border: none;
+
+            padding: 12px 28px;
+
+            border-radius: 7px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+
+            background: #1e3a5f;
+
+            color: white;
+        }
+
+        input[type="submit"]:hover {
+
+            background: #2563eb;
+
+            transform: translateY(-2px);
+        }
+
+        input[type="reset"] {
+
+            background: #e2e8f0;
+
+            color: #334155;
+        }
+
+        input[type="reset"]:hover {
+
+            background: #cbd5e1;
+        }
+
+
+        /* =========================
+           TABLE CONTAINER
+        ========================= */
+
+        table {
+
+            width: 90%;
+
+            max-width: 850px;
+
+            margin: 40px auto;
+
+            border-collapse: collapse;
+
+            background: white;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 10px 30px rgba(15, 23, 42, 0.10);
+        }
+
+
+        /* =========================
+           TABLE CAPTION
+        ========================= */
+
+        caption {
+
+            caption-side: top;
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            color: #1e3a5f;
+
+            padding: 15px;
+        }
+
+
+        /* =========================
+           TABLE HEADER
+        ========================= */
+
+        thead {
+
+            background: #1e3a5f;
+
+            color: white;
+        }
+
+        th {
+
+            padding: 15px;
+
+            font-size: 15px;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           TABLE BODY
+        ========================= */
+
+        td {
+
+            padding: 14px;
+
+            text-align: center;
+
+            border: 1px solid #dbe3ec;
+
+            color: #475569;
+        }
+
+        tbody tr:nth-child(even) {
+
+            background: #f8fafc;
+        }
+
+        tbody tr:hover {
+
+            background: #eff6ff;
+        }
+
+
+        /* =========================
+           TABLE FOOTER
+        ========================= */
+
+        tfoot {
+
+            background: #dbeafe;
+
+            color: #1e3a5f;
+
+            font-weight: bold;
+        }
+
+        tfoot td {
+
+            padding: 15px;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 25px 10px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            form {
+                width: 100%;
+
+                padding: 20px;
+            }
+
+            fieldset {
+                padding: 18px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="date"],
+            input[type="tel"],
+            input[type="number"],
+            select,
+            textarea {
+                width: 100%;
+
+                margin-top: 6px;
+            }
+
+            table {
+                width: 100%;
+
+                font-size: 13px;
+            }
+
+            th,
+            td {
+                padding: 9px 5px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- PAGE TITLE -->
+
+    <h1>
+        CodingPro Web Workshop &ndash; Registration
+    </h1>
+
+
+    <!-- FORM -->
+
+    <form action="#" method="post">
+
+
+        <!-- PERSONAL DETAILS -->
+
+        <fieldset>
+
+            <legend>
+                Personal Details
+            </legend>
+
+
+            <p>
+
+                <label for="name">
+                    Full Name:
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </p>
+
+
+            <p>
+
+                <label for="email">
+                    Email:
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="name@example.com"
+                    required
+                >
+
+            </p>
+
+
+            <p>
+
+                <label for="dob">
+                    Date of Birth:
+                </label>
+
+                <input
+                    type="date"
+                    id="dob"
+                    name="dob"
+                >
+
+                &nbsp;
+
+                <label for="phone">
+                    Mobile:
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    pattern="[0-9]{10}"
+                    placeholder="10 digits"
+                >
+
+            </p>
+
+
+            <p>
+
+                Gender:
+
+                <input
+                    type="radio"
+                    id="m"
+                    name="gender"
+                    value="male"
+                >
+
+                <label for="m">
+                    Male
+                </label>
+
+
+                <input
+                    type="radio"
+                    id="f"
+                    name="gender"
+                    value="female"
+                >
+
+                <label for="f">
+                    Female
+                </label>
+
+
+                <input
+                    type="radio"
+                    id="o"
+                    name="gender"
+                    value="other"
+                >
+
+                <label for="o">
+                    Other
+                </label>
+
+            </p>
+
+        </fieldset>
+
+
+        <!-- ACADEMIC DETAILS -->
+
+        <fieldset>
+
+            <legend>
+                Academic Details
+            </legend>
+
+
+            <p>
+
+                <label for="branch">
+                    Branch:
+                </label>
+
+                <select
+                    id="branch"
+                    name="branch"
+                >
+
+                    <option>
+                        Computer Engineering
+                    </option>
+
+                    <option>
+                        Information Technology
+                    </option>
+
+                    <option>
+                        AI &amp; Data Science
+                    </option>
+
+                </select>
+
+                &nbsp;
+
+                <label for="sem">
+                    Semester:
+                </label>
+
+                <input
+                    type="number"
+                    id="sem"
+                    name="sem"
+                    min="1"
+                    max="8"
+                    value="3"
+                >
+
+            </p>
+
+
+            <p>
+
+                Interests:
+
+                <input
+                    type="checkbox"
+                    id="c1"
+                    name="topic"
+                    value="html"
+                    checked
+                >
+
+                <label for="c1">
+                    HTML
+                </label>
+
+
+                <input
+                    type="checkbox"
+                    id="c2"
+                    name="topic"
+                    value="css"
+                >
+
+                <label for="c2">
+                    CSS
+                </label>
+
+
+                <input
+                    type="checkbox"
+                    id="c3"
+                    name="topic"
+                    value="js"
+                >
+
+                <label for="c3">
+                    JavaScript
+                </label>
+
+            </p>
+
+
+            <p>
+
+                <label for="msg">
+                    Why do you want to join?
+                </label>
+
+                <br>
+
+                <textarea
+                    id="msg"
+                    name="msg"
+                    rows="3"
+                    cols="50"
+                ></textarea>
+
+            </p>
+
+
+            <p>
+
+                <label for="resume">
+                    Upload Resume (PDF):
+                </label>
+
+                <input
+                    type="file"
+                    id="resume"
+                    name="resume"
+                    accept=".pdf"
+                >
+
+            </p>
+
+        </fieldset>
+
+
+        <!-- BUTTONS -->
+
+        <p>
+
+            <input
+                type="submit"
+                value="Register"
+            >
+
+            <input
+                type="reset"
+                value="Clear"
+            >
+
+        </p>
+
+    </form>
+
+
+    <!-- WORKSHOP SCHEDULE -->
+
+    <table>
+
+        <caption>
+            <strong>Workshop Schedule</strong>
+        </caption>
+
+
+        <thead>
+
+            <tr>
+
+                <th>Day</th>
+
+                <th>Time</th>
+
+                <th>Session</th>
+
+                <th>Trainer</th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+            <tr>
+
+                <td rowspan="2">
+                    Monday
+                </td>
+
+                <td>
+                    10:00 &ndash; 12:00
+                </td>
+
+                <td>
+                    HTML Fundamentals
+                </td>
+
+                <td rowspan="2">
+                    Prof. R. Shah
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    13:00 &ndash; 15:00
+                </td>
+
+                <td>
+                    Forms &amp; Tables
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Tuesday
+                </td>
+
+                <td>
+                    10:00 &ndash; 12:00
+                </td>
+
+                <td>
+                    CSS Basics
+                </td>
+
+                <td>
+                    Ms. P. Iyer
+                </td>
+
+            </tr>
+
+        </tbody>
+
+
+        <tfoot>
+
+            <tr>
+
+                <td colspan="4">
+                    Venue: Lab 204, Block B
+                </td>
+
+            </tr>
+
+        </tfoot>
+
+    </table>
+
+
+</body>
+
+</html>
