@@ -1,0 +1,115 @@
+// ===== main.scss : entry file that imports the partials =====
+
+@use "sass:color";
+@use "variables" as *;
+@use "mixins" as *;
+@use "buttons";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-body;
+  color: $text-color;
+  background: $light-bg;
+}
+
+// ---------- Nesting ----------
+.site-header {
+  @include flex-center;
+  flex-direction: column;
+  padding: $spacing * 2;
+  background: $primary;
+  color: #fff;
+
+  h1 {
+    margin: 0;
+    font-family: $font-heading;
+
+    span {
+      color: $accent;
+    }
+  }
+
+  p {
+    margin: 6px 0 0;
+    color: rgba(#fff, 0.75); // SASS accepts a hex colour in rgba()
+  }
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: $spacing * 1.5;
+}
+
+// ---------- Grid of cards with a responsive mixin ----------
+.cards {
+  display: grid;
+  gap: $spacing;
+  grid-template-columns: 1fr;
+
+  @include respond("tablet") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond("desktop") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: #fff;
+  padding: $spacing;
+  border-radius: $radius;
+  @include card-shadow(2);
+
+  &__title {
+    margin-top: 0;
+    color: $primary;
+  }
+
+  &:hover {
+    @include card-shadow(4);
+  }
+}
+
+// ---------- @each loop generates utility classes ----------
+$tags: (
+  "html": #e34c26,
+  "css": #264de4,
+  "js": #d4a106
+);
+
+@each $name, $tag-color in $tags {
+  .tag-#{$name} {
+    display: inline-block;
+    padding: 2px 10px;
+    margin-bottom: 8px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    color: #fff;
+    background: $tag-color;
+  }
+}
+
+// ---------- %placeholder + @extend ----------
+%message {
+  padding: $spacing * 0.75;
+  border-radius: $radius;
+  margin-top: $spacing;
+}
+
+.message-success {
+  @extend %message;
+  background: color.adjust($success, $alpha: -0.85);
+  color: $success;
+}
+
+.message-error {
+  @extend %message;
+  background: color.adjust($danger, $alpha: -0.88);
+  color: $danger;
+}
