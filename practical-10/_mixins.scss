@@ -1,4 +1,5 @@
-@mixin section-padding($size: 5rem) {
+/* ===== _mixins.scss ===== */
+@mixin section-padding($size: $section-gap) {
   padding-top: $size;
   padding-bottom: $size;
 }
@@ -8,7 +9,7 @@
 
   &:hover {
     transform: translateY(-$distance);
-    box-shadow: 0 1rem 2rem rgba(59, 7, 100, 0.18);
+    box-shadow: 0 1rem 2rem rgba(27, 42, 74, 0.15);
   }
 }
 
@@ -21,4 +22,143 @@
   background: $bg;
   color: $fg;
   font-weight: 700;
+}
+opereators
+/* ===== _components.scss : custom components built on top of Bootstrap ===== */
+.hero {
+  @include section-padding(6rem);
+  background: $brand-gradient;
+  color: #fff;
+
+  .hero-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+
+    span {
+      color: $warning;
+    }
+  }
+
+  .stat {
+    strong {
+      display: block;
+      font-size: 1.8rem;
+      color: $warning;
+    }
+
+    small {
+      color: rgba(#fff, 0.75);
+    }
+  }
+}
+
+.hero-card {
+  background: rgba(#fff, 0.08);
+  border: 1px solid rgba(#fff, 0.2);
+  border-radius: $border-radius-lg;
+  padding: 1.5rem;
+
+  .code-line {
+    font-family: Consolas, monospace;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+
+    .kw {
+      color: $warning;
+    }
+
+    .str {
+      color: #86efac;
+    }
+  }
+}
+
+.section {
+  @include section-padding;
+}
+
+.section-title {
+  position: relative;
+  padding-bottom: 0.75rem;
+  margin-bottom: 2.5rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    transform: translateX(-50%);
+    background: $warning;
+    border-radius: 2px;
+  }
+}
+
+.feature-card {
+  @include lift-on-hover;
+  border: 0;
+
+  .icon {
+    @include icon-circle(56px, rgba($primary, 0.08), $primary);
+    font-size: 1.4rem;
+  }
+}
+
+.course-card {
+  @include lift-on-hover(8px);
+  overflow: hidden;
+
+  .course-top {
+    height: 110px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  @each $name, $bg in ("html": #e34c26, "js": #d4a106, "react": #0891b2, "full": $primary) {
+    .bg-#{$name} {
+      background: $bg;
+    }
+  }
+}
+
+.testimonial {
+  border-left: 4px solid $warning;
+
+  .avatar {
+    @include icon-circle(44px, $primary, #fff);
+  }
+}
+
+.cta {
+  background: $brand-gradient;
+  border-radius: $border-radius-lg;
+  color: #fff;
+}
+
+.site-footer {
+  background: darken($primary, 6%);
+  color: rgba(#fff, 0.7);
+
+  a {
+    color: rgba(#fff, 0.85);
+    text-decoration: none;
+
+    &:hover {
+      color: $warning;
+    }
+  }
+}
+
+// Mobile tweaks using Bootstrap's own breakpoint mixin
+@include media-breakpoint-down(md) {
+  .hero {
+    text-align: center;
+  }
+
+  .section {
+    @include section-padding(3rem);
+  }
 }
