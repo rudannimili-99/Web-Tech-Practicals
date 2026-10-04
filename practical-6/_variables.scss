@@ -1,0 +1,20 @@
+// ===== _variables.scss : design tokens =====
+
+$primary:      #1b2a4a;
+$accent:       #f59e0b;
+$success:      #16a34a;
+$danger:       #dc2626;
+$light-bg:     #f5f7fb;
+$text-color:   #1f2937;
+
+$font-body:    "Segoe UI", Arial, sans-serif;
+$font-heading: Georgia, "Times New Roman", serif;
+
+$radius:       8px;
+$spacing:      16px;
+
+// Breakpoints stored in a map
+$breakpoints: (
+  "tablet": 768px,
+  "desktop": 1024px
+);
