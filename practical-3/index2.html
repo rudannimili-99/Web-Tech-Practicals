@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Styling | Experiment 3</title>
+
+  <style>
+    /* ---------- 1. Universal & element selectors ---------- */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #1f2937;
+      background-color: rgb(245, 247, 251);
+    }
+
+    h1, h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+    }
+
+    h2 {
+      color: hsl(220, 45%, 30%);
+      border-bottom: 2px solid #c7d2e5;
+      padding-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+    }
+
+    /* ---------- 2. Class & ID selectors ---------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: #1b2a4a;
+      color: #ffffff;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .site-header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    .badge {
+      background: #f59e0b;
+      color: #1b2a4a;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 16px 24px 60px;
+    }
+
+    #topics {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      background-color: rgba(59, 130, 246, 0.15);
+      font-weight: 600;
+    }
+
+    /* ---------- 3. Descendant, pseudo-class, pseudo-element ---------- */
+    #topics li a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    #topics li a:hover {
+      text-decoration: underline;
+      color: #b91c1c;
+    }
+
+    #topics li:nth-child(odd) {
+      color: #374151;
+    }
+
+    #topics li:last-child::first-letter {
+      font-size: 1.5em;
+      color: #b45309;
+    }
+
+    /* ---------- 4. Attribute selector ---------- */
+    input[type="text"] {
+      padding: 8px 10px;
+      width: 300px;
+      border: 1px solid #94a3b8;
+      border-radius: 4px;
+    }
+
+    input[type="text"]:focus {
+      outline: 2px solid #3b82f6;
+    }
+
+    /* ---------- 5. Box model ---------- */
+    .box {
+      width: 360px;
+      padding: 20px;
+      border: 6px dashed #1b2a4a;
+      margin: 20px;
+      background: #e0e7ff;
+      text-align: center;
+    }
+
+    /* ---------- 6. Positioning ---------- */
+    .pos-parent {
+      position: relative;
+      height: 150px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+    }
+
+    .pos {
+      width: 110px;
+      padding: 10px;
+      color: #fff;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .static {
+      background: #64748b;
+    }
+
+    .relative {
+      background: #0891b2;
+      position: relative;
+      top: 10px;
+      left: 130px;
+    }
+
+    .absolute {
+      background: #b91c1c;
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+    }
+
+    .fixed-help {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #16a34a;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 24px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ---------- 7. Card combining the concepts ---------- */
+    .card {
+      position: relative;
+      width: 340px;
+      padding: 24px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(27, 42, 74, 0.12);
+    }
+
+    .card h3 {
+      margin-top: 8px;
+      color: #1b2a4a;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #15803d;
+      margin: 0;
+    }
+
+    .ribbon {
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      background: #b91c1c;
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <h1>CodingPro Courses</h1>
+    <span class="badge">NEW</span>
+  </header>
+
+  <main class="container">
+
+    <!-- Inline style -->
+    <p style="color: #b45309;">
+      Inline style has the highest priority among the three methods.
+    </p>
+
+    <p class="note">
+      This line is styled by an internal style sheet.
+    </p>
+
+    <h2>Selectors Demo</h2>
+
+    <ul id="topics">
+      <li>Element selector</li>
+      <li class="highlight">Class selector</li>
+      <li>Descendant selector</li>
+      <li><a href="#">Pseudo-class :hover</a></li>
+      <li>Pseudo-element ::first-letter</li>
+    </ul>
+
+    <input type="text" placeholder="Attribute selector [type=text]">
+
+    <h2>Box Model</h2>
+
+    <div class="box">
+      content + padding + border + margin
+    </div>
+
+    <h2>Positioning</h2>
+
+    <div class="pos-parent">
+      <div class="pos static">static</div>
+      <div class="pos relative">relative</div>
+      <div class="pos absolute">absolute</div>
+    </div>
+
+    <h2>Course Card</h2>
+
+    <div class="card">
+      <span class="ribbon">Bestseller</span>
+
+      <h3>Full-Stack Web Development</h3>
+
+      <p>
+        HTML, CSS, JavaScript, React and Node.js &ndash; 12 weeks.
+      </p>
+
+      <p class="price">&#8377; 4,999</p>
+    </div>
+
+  </main>
+
+  <div class="fixed-help">Help ?</div>
+
+</body>
+</html>
