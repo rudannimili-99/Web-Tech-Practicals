@@ -1,0 +1,35 @@
+// ===== _mixins.scss : reusable blocks of CSS =====
+
+@use "sass:map";
+@use "variables" as *;
+
+// Mixin without arguments
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin with arguments and a default value
+@mixin card-shadow($depth: 1) {
+  box-shadow: 0 #{2 * $depth}px #{6 * $depth}px rgba(0, 0, 0, 0.08 * $depth);
+}
+
+// Mixin that uses @content for media queries
+@mixin respond($device) {
+  @media (min-width: map.get($breakpoints, $device)) {
+    @content;
+  }
+}
+
+// Mixin that generates a coloured button
+@mixin button-variant($bg, $color: #fff) {
+  background: $bg;
+  color: $color;
+  border: 2px solid $bg;
+
+  &:hover {
+    background: transparent;
+    color: $bg;
+  }
+}

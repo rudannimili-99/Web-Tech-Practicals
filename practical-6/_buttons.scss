@@ -1,0 +1,20 @@
+// ===== _buttons.scss : partial for button styles =====
+
+@use "variables" as *;
+@use "mixins" as *;
+
+.btn {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: $radius;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  // Nested modifier classes using the parent selector (&)
+  &--primary { @include button-variant($primary); }
+  &--accent  { @include button-variant($accent, $primary); }
+  &--success { @include button-variant($success); }
+  &--danger  { @include button-variant($danger); }
+}
