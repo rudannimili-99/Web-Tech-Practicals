@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Marks Manager | Experiment 8</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      transition: background 0.3s;
+    }
+
+    body.dark {
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    header {
+      background: #1b2a4a;
+      color: #fff;
+      padding: 18px 28px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    header p {
+      margin: 4px 0 0;
+      color: #cbd5e1;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .panel {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .panel input,
+    .panel select {
+      padding: 8px 10px;
+      border: 1px solid #94a3b8;
+      border-radius: 6px;
+      flex: 1;
+    }
+
+    button {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      background: #1b2a4a;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #2f5d9f;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .toolbar button {
+      background: #475569;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    body.dark table {
+      background: #1e293b;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    th {
+      background: #e2e8f0;
+      color: #1b2a4a;
+    }
+
+    .pass {
+      color: #15803d;
+      font-weight: 600;
+    }
+
+    .fail {
+      color: #dc2626;
+      font-weight: 600;
+    }
+
+    tr.new-row {
+      animation: flash 1s ease;
+    }
+
+    @keyframes flash {
+      from {
+        background: #fef3c7;
+      }
+
+      to {
+        background: transparent;
+      }
+    }
+
+    .delete {
+      background: #dc2626;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .stat {
+      background: #fff;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+      border-top: 3px solid #3b82f6;
+    }
+
+    body.dark .stat {
+      background: #1e293b;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.4rem;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <h1>Student Marks Manager</h1>
+    <p>Functions &middot; Arrays &middot; Objects &middot; DOM Manipulation</p>
+  </header>
+
+  <main>
+
+    <form id="studentForm" class="panel">
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Student name"
+        required
+      >
+
+      <input
+        type="number"
+        id="marks"
+        placeholder="Marks (0-100)"
+        min="0"
+        max="100"
+        required
+      >
+
+      <select id="branch">
+        <option value="CE">CE</option>
+        <option value="IT">IT</option>
+        <option value="AIDS">AI&amp;DS</option>
+      </select>
+
+      <button type="submit">Add Student</button>
+
+    </form>
+
+    <div class="toolbar">
+      <button id="sortBtn">Sort by Marks</button>
+      <button id="filterBtn">Show Passed Only</button>
+      <button id="resetBtn">Show All</button>
+      <button id="themeBtn">Toggle Theme</button>
+    </div>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Branch</th>
+          <th>Marks</th>
+          <th>Result</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody id="tableBody"></tbody>
+
+    </table>
+
+    <section id="stats" class="stats"></section>
+
+  </main>
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
