@@ -78,9 +78,9 @@ body {
 
 // ---------- @each loop generates utility classes ----------
 $tags: (
-  "html": #e34c26,
-  "css": #264de4,
-  "js": #d4a106
+  "html": #7b2cbf,
+  "css": #5a189a,
+  "js": #9d4edd
 );
 
 @each $name, $tag-color in $tags {
