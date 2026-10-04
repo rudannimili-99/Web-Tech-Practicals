@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Marks Manager | Experiment 8</title>
-
-  <style>
+<style>
   * {
     box-sizing: border-box;
   }
@@ -16,189 +15,189 @@
     font-family: "Segoe UI", Arial, sans-serif;
     background: #f3e8ff;
     color: #2e1065;
-    transition: background 0.3s, color 0.3s;
   }
 
-  body.dark {
-    background: #1e0b36;
-    color: #f3e8ff;
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 20px;
+    max-width: 980px;
+    margin: 24px auto;
+    padding: 0 20px;
   }
 
-  header {
-    background: #3b0764;
-    color: #fff;
-    padding: 20px 28px;
-  }
-
-  header h1 {
-    margin: 0;
-    font-size: 1.6rem;
-  }
-
-  header p {
-    margin: 4px 0 0;
-    color: #ddd6fe;
-  }
-
-  main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-  .panel {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 14px;
-  }
-
-  .panel input,
-  .panel select {
-    padding: 9px 10px;
-    border: 1px solid #c4b5fd;
-    border-radius: 6px;
-    flex: 1;
+  form,
+  .events {
     background: #fff;
-    color: #2e1065;
+    border-radius: 10px;
+    padding: 22px 26px;
+    box-shadow: 0 4px 14px rgba(59, 7, 100, 0.12);
+  }
+
+  h1 {
+    font-size: 1.35rem;
+    color: #3b0764;
+    margin-top: 0;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    color: #581c87;
+    margin-top: 0;
+  }
+
+  .field {
+    margin-bottom: 12px;
+  }
+
+  .field label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  .field input[type="text"],
+  .field input[type="email"],
+  .field input[type="tel"],
+  .field input[type="password"] {
+    width: 100%;
+    padding: 9px 11px;
+    border: 1.5px solid #c4b5fd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+  }
+
+  .field input:focus {
+    outline: none;
+    border-color: #7e22ce;
+    box-shadow: 0 0 0 3px rgba(126, 34, 206, 0.12);
+  }
+
+  .field.inline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .field.inline label {
+    display: inline;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .field.inline .error {
+    flex-basis: 100%;
+  }
+
+  .field.invalid input {
+    border-color: #dc2626;
+    background: #fef2f2;
+  }
+
+  .field.valid input {
+    border-color: #16a34a;
+    background: #f0fdf4;
+  }
+
+  .error {
+    color: #dc2626;
+    font-size: 0.8rem;
+    min-height: 1em;
+    display: block;
+  }
+
+  .hint {
+    color: #7e22ce;
+    font-size: 0.8rem;
+  }
+
+  .meter {
+    height: 6px;
+    background: #e9d5ff;
+    border-radius: 3px;
+    margin-top: 6px;
+    overflow: hidden;
+  }
+
+  .meter span {
+    display: block;
+    height: 100%;
+    width: 0;
+    transition: width 0.3s, background 0.3s;
   }
 
   button {
-    padding: 9px 14px;
+    width: 100%;
+    padding: 11px;
     border: none;
     border-radius: 6px;
-    background: #581c87;
+    background: #3b0764;
     color: #fff;
+    font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
   }
 
   button:hover {
-    background: #3b0764;
-  }
-
-  .toolbar {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 14px;
-  }
-
-  .toolbar button {
-    background: #7e22ce;
-  }
-
-  .toolbar button:hover {
     background: #581c87;
   }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(59, 7, 100, 0.15);
+  #formMessage {
+    margin: 12px 0 0;
+    padding: 0;
+    font-weight: 600;
   }
 
-  body.dark table {
-    background: #2e1065;
-  }
-
-  th,
-  td {
-    padding: 10px 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd6fe;
-  }
-
-  th {
-    background: #e9d5ff;
-    color: #3b0764;
-  }
-
-  body.dark th {
-    background: #581c87;
-    color: #fff;
-  }
-
-  .pass {
+  #formMessage.success {
     color: #15803d;
-    font-weight: 600;
+    background: #dcfce7;
+    padding: 10px;
+    border-radius: 6px;
   }
 
-  .fail {
-    color: #dc2626;
-    font-weight: 600;
+  #formMessage.fail {
+    color: #b91c1c;
+    background: #fee2e2;
+    padding: 10px;
+    border-radius: 6px;
   }
 
-  tr.new-row {
-    animation: flash 1s ease;
-  }
-
-  @keyframes flash {
-    from {
-      background: #e9d5ff;
-    }
-
-    to {
-      background: transparent;
-    }
-  }
-
-  .delete {
-    background: #dc2626;
-    padding: 4px 10px;
-    font-size: 0.8rem;
-  }
-
-  .delete:hover {
-    background: #991b1b;
-  }
-
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-top: 16px;
-  }
-
-  .stat {
-    background: #fff;
-    border-radius: 8px;
-    padding: 12px;
+  .hover-box {
+    padding: 22px;
     text-align: center;
-    border-top: 3px solid #7e22ce;
-    box-shadow: 0 4px 12px rgba(59, 7, 100, 0.12);
+    border: 2px dashed #a855f7;
+    border-radius: 8px;
+    transition: background 0.2s;
+    user-select: none;
   }
 
-  body.dark .stat {
-    background: #2e1065;
-    color: #fff;
+  .hover-box.active {
+    background: #e9d5ff;
+    border-color: #7e22ce;
   }
 
-  .stat strong {
-    display: block;
-    font-size: 1.4rem;
-    color: #581c87;
+  .hover-box.clicked {
+    background: #f3e8ff;
   }
 
-  body.dark .stat strong {
-    color: #d8b4fe;
+  #log {
+    list-style: none;
+    padding: 0;
+    font-family: Consolas, monospace;
+    font-size: 0.8rem;
+    max-height: 260px;
+    overflow: auto;
   }
 
-  @media (max-width: 700px) {
-    .stats {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    main {
-      padding: 15px;
-    }
+  #log li {
+    padding: 4px 6px;
+    border-bottom: 1px solid #e9d5ff;
   }
 
-  @media (max-width: 450px) {
-    .stats {
+  @media (max-width: 768px) {
+    .wrapper {
       grid-template-columns: 1fr;
     }
   }
