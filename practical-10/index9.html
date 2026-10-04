@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CodingPro Academy - industry-ready web development courses in partnership with JG University.">
+  <title>CodingPro Academy | Mini Project</title>
+
+  <!-- Single stylesheet: Bootstrap + custom styles compiled from SASS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="#">Coding<span class="text-warning">Pro</span></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Why Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+          <li class="nav-item"><a class="btn btn-warning btn-sm px-3 ms-lg-2" href="#contact">Join Now</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-6">
+          <span class="badge bg-warning text-dark mb-3">JG University × CodingPro</span>
+
+          <h1 class="hero-title fw-bold mb-3">
+            Build the web. <span>Launch your career.</span>
+          </h1>
+
+          <p class="lead mb-4 opacity-75">
+            Hands-on courses in HTML, CSS, JavaScript and modern frameworks, taught by industry mentors.
+          </p>
+
+          <div class="d-flex gap-3 justify-content-center justify-content-lg-start mb-4">
+            <a href="#courses" class="btn btn-warning btn-lg">Explore Courses</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg">Talk to Us</a>
+          </div>
+
+          <div class="row text-center text-lg-start">
+            <div class="col-4 stat">
+              <strong>2,500+</strong>
+              <small>Students</small>
+            </div>
+
+            <div class="col-4 stat">
+              <strong>40+</strong>
+              <small>Projects</small>
+            </div>
+
+            <div class="col-4 stat">
+              <strong>92%</strong>
+              <small>Placed</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 d-none d-md-block">
+          <div class="hero-card">
+            <p class="code-line mb-1"><span class="kw">const</span> student = {</p>
+            <p class="code-line mb-1 ps-4">name: <span class="str">"You"</span>,</p>
+            <p class="code-line mb-1 ps-4">
+              skills: [<span class="str">"HTML"</span>, <span class="str">"CSS"</span>,
+              <span class="str">"SASS"</span>, <span class="str">"Bootstrap"</span>],
+            </p>
+            <p class="code-line mb-1 ps-4">
+              goal: <span class="str">"Full-Stack Developer"</span>
+            </p>
+            <p class="code-line mb-0">};</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FEATURES ============ -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="section-title text-center">Why learn with CodingPro?</h2>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card feature-card h-100 shadow-sm p-3">
+            <div class="icon mb-3">⚙</div>
+            <h3 class="h5">Project-based</h3>
+            <p class="text-muted mb-0">
+              Every module ends with a real project for your portfolio.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card feature-card h-100 shadow-sm p-3">
+            <div class="icon mb-3">★</div>
+            <h3 class="h5">Industry mentors</h3>
+            <p class="text-muted mb-0">
+              Learn from developers working at product companies.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card feature-card h-100 shadow-sm p-3">
+            <div class="icon mb-3">✓</div>
+            <h3 class="h5">University credit</h3>
+            <p class="text-muted mb-0">
+              Courses are mapped to the JG University curriculum.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card feature-card h-100 shadow-sm p-3">
+            <div class="icon mb-3">✉</div>
+            <h3 class="h5">Placement support</h3>
+            <p class="text-muted mb-0">
+              Mock interviews, resume reviews and hiring drives.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COURSES ============ -->
+  <section id="courses" class="section bg-white">
+    <div class="container">
+      <h2 class="section-title text-center">Popular Courses</h2>
+
+      <div class="row g-4">
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card course-card h-100 shadow-sm">
+            <div class="course-top bg-html">&lt;/&gt;</div>
+
+            <div class="card-body">
+              <h3 class="h6 fw-bold">HTML & CSS Essentials</h3>
+              <p class="small text-muted">4 weeks · Beginner</p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold">₹1,999</span>
+                <a href="#contact" class="btn btn-sm btn-primary">Enroll</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card course-card h-100 shadow-sm">
+            <div class="course-top bg-js">JS</div>
+
+            <div class="card-body">
+              <h3 class="h6 fw-bold">JavaScript in Depth</h3>
+              <p class="small text-muted">6 weeks · Intermediate</p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold">₹2,999</span>
+                <a href="#contact" class="btn btn-sm btn-primary">Enroll</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card course-card h-100 shadow-sm">
+            <div class="course-top bg-react">⚛</div>
+
+            <div class="card-body">
+              <h3 class="h6 fw-bold">React Front-End</h3>
+              <p class="small text-muted">8 weeks · Intermediate</p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold">₹3,999</span>
+                <a href="#contact" class="btn btn-sm btn-primary">Enroll</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card course-card h-100 shadow-sm">
+            <div class="course-top bg-full">{ }</div>
+
+            <div class="card-body">
+              <h3 class="h6 fw-bold">Full-Stack Bootcamp</h3>
+              <p class="small text-muted">12 weeks · Advanced</p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold">₹7,999</span>
+                <a href="#contact" class="btn btn-sm btn-primary">Enroll</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section id="reviews" class="section">
+    <div class="container">
+      <h2 class="section-title text-center">What students say</h2>
+
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="card testimonial h-100 p-4 shadow-sm">
+            <p class="fst-italic">
+              “The projects made concepts like Flexbox and Grid finally click.”
+            </p>
+
+            <div class="d-flex align-items-center gap-2 mt-auto">
+              <span class="avatar">SA</span>
+              <div>
+                <strong>Student A</strong><br>
+                <small class="text-muted">B.Tech CE, Sem 5</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card testimonial h-100 p-4 shadow-sm">
+            <p class="fst-italic">
+              “Mentor feedback on my code every week helped me improve fast.”
+            </p>
+
+            <div class="d-flex align-items-center gap-2 mt-auto">
+              <span class="avatar">SB</span>
+              <div>
+                <strong>Student B</strong><br>
+                <small class="text-muted">B.Tech IT, Sem 3</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card testimonial h-100 p-4 shadow-sm">
+            <p class="fst-italic">
+              “I built my first portfolio site during the course.”
+            </p>
+
+            <div class="d-flex align-items-center gap-2 mt-auto">
+              <span class="avatar">SC</span>
+              <div>
+                <strong>Student C</strong><br>
+                <small class="text-muted">B.Tech AI&DS, Sem 4</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT / CTA ============ -->
+  <section id="contact" class="section pt-0">
+    <div class="container">
+
+      <div class="cta p-4 p-md-5">
+        <div class="row g-4 align-items-center">
+
+          <div class="col-lg-5">
+            <h2 class="fw-bold">Ready to start?</h2>
+            <p class="opacity-75 mb-0">
+              Leave your details and our counsellor will call you within 24 hours.
+            </p>
+          </div>
+
+          <div class="col-lg-7">
+            <form class="row g-2">
+
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Full name" aria-label="Full name" required>
+              </div>
+
+              <div class="col-md-6">
+                <input type="email" class="form-control" placeholder="Email" aria-label="Email" required>
+              </div>
+
+              <div class="col-md-6">
+                <select class="form-select" aria-label="Course">
+                  <option selected>Choose a course</option>
+                  <option>HTML & CSS Essentials</option>
+                  <option>JavaScript in Depth</option>
+                  <option>React Front-End</option>
+                  <option>Full-Stack Bootcamp</option>
+                </select>
+              </div>
+
+              <div class="col-md-6 d-grid">
+                <button type="submit" class="btn btn-warning">Request a Call</button>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2 small">
+      <span>© 2026 CodingPro Academy × JG University</span>
+      <span>
+        <a href="#">Privacy</a> ·
+        <a href="#">Terms</a> ·
+        <a href="#contact">Contact</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

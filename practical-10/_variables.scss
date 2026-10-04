@@ -1,0 +1,18 @@
+/* ===== _variables.scss : override Bootstrap defaults BEFORE importing it ===== */
+$primary:        #1b2a4a;
+$secondary:      #475569;
+$warning:        #f59e0b;
+$body-bg:        #f7f8fc;
+$body-color:     #1f2937;
+
+$font-family-sans-serif: "Segoe UI", Arial, sans-serif;
+$headings-font-family:   Georgia, "Times New Roman", serif;
+$headings-font-weight:   700;
+
+$border-radius:     0.6rem;
+$border-radius-lg:  0.9rem;
+$enable-shadows:    true;
+
+/* Project-specific variables */
+$brand-gradient: linear-gradient(120deg, #1b2a4a 0%, #2f5d9f 100%);
+$section-gap:    5rem;
