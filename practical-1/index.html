@@ -24,8 +24,8 @@
 
     body {
         font-family: Arial, Helvetica, sans-serif;
-        background: linear-gradient(135deg, #f5f0ff, #ede9fe);
-        color: #2e1065;
+        background: #f6f3ff;
+        color: #29204a;
         line-height: 1.7;
     }
 
@@ -35,17 +35,10 @@
     ============================== */
 
     header {
-        background: linear-gradient(
-            135deg,
-            #4c1d95,
-            #6d28d9,
-            #9333ea
-        );
-
+        background: linear-gradient(135deg, #4b1d95, #6d28d9);
         color: white;
         text-align: center;
-
-        padding: 55px 20px;
+        padding: 45px 20px 55px;
 
         box-shadow: 0 8px 25px rgba(76, 29, 149, 0.25);
     }
@@ -60,14 +53,14 @@
     header h2 {
         font-size: 22px;
         font-weight: 400;
-        color: #f3e8ff;
+        color: #e9ddff;
         margin-bottom: 5px;
     }
 
     header h3 {
         font-size: 17px;
         font-weight: 400;
-        color: #e9d5ff;
+        color: #ddd0ff;
     }
 
 
@@ -86,16 +79,14 @@
 
         margin: 25px 0 10px;
 
-        box-shadow:
-            0 8px 25px rgba(76, 29, 149, 0.35);
+        box-shadow: 0 8px 25px rgba(30, 15, 70, 0.35);
 
         transition: 0.3s ease;
     }
 
     .profile-image:hover {
         transform: scale(1.05);
-        box-shadow:
-            0 10px 30px rgba(124, 58, 237, 0.45);
+        box-shadow: 0 12px 30px rgba(109, 40, 217, 0.45);
     }
 
 
@@ -116,7 +107,7 @@
     ============================== */
 
     .section {
-        background: rgba(255, 255, 255, 0.96);
+        background: #ffffff;
 
         padding: 32px;
 
@@ -124,23 +115,26 @@
 
         border-radius: 14px;
 
-        border: 1px solid #ddd6fe;
+        border: 1px solid #e2d9f7;
 
-        box-shadow:
-            0 5px 18px rgba(76, 29, 149, 0.10);
+        box-shadow: 0 5px 18px rgba(76, 29, 149, 0.10);
 
         transition: 0.25s ease;
     }
 
     .section:hover {
-        box-shadow:
-            0 10px 30px rgba(76, 29, 149, 0.18);
+        transform: translateY(-3px);
 
-        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(76, 29, 149, 0.17);
     }
 
+
+    /* ==============================
+       SECTION HEADINGS
+    ============================== */
+
     .section h4 {
-        color: #6d28d9;
+        color: #5b21b6;
 
         font-size: 24px;
 
@@ -148,7 +142,7 @@
 
         padding-bottom: 10px;
 
-        border-bottom: 2px solid #ede9fe;
+        border-bottom: 2px solid #eee7ff;
 
         position: relative;
     }
@@ -164,11 +158,7 @@
         width: 55px;
         height: 3px;
 
-        background: linear-gradient(
-            90deg,
-            #7c3aed,
-            #c026d3
-        );
+        background: #7c3aed;
 
         border-radius: 5px;
     }
@@ -179,22 +169,21 @@
     ============================== */
 
     .about p {
-        color: #5b4b73;
+        color: #514568;
         margin-bottom: 15px;
     }
 
     strong {
-        color: #5b21b6;
+        color: #4c1d95;
     }
 
     em {
-        color: #9333ea;
+        color: #7c3aed;
     }
 
     mark {
         background: #ede9fe;
-
-        color: #6d28d9;
+        color: #5b21b6;
 
         padding: 3px 7px;
 
@@ -211,7 +200,7 @@
 
         height: 1px;
 
-        background: #ddd6fe;
+        background: #ddd4f2;
 
         margin: 30px 0;
     }
@@ -226,18 +215,13 @@
 
         display: grid;
 
-        grid-template-columns:
-            repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
 
         gap: 18px;
     }
 
     .skills li {
-        background: linear-gradient(
-            135deg,
-            #faf5ff,
-            #f3e8ff
-        );
+        background: #faf8ff;
 
         padding: 18px;
 
@@ -245,9 +229,9 @@
 
         border-radius: 10px;
 
-        border: 1px solid #ddd6fe;
+        border: 1px solid #ddd2f4;
 
-        color: #6d28d9;
+        color: #5b21b6;
 
         font-weight: 600;
 
@@ -255,18 +239,13 @@
     }
 
     .skills li:hover {
-        background: linear-gradient(
-            135deg,
-            #ede9fe,
-            #e9d5ff
-        );
+        background: #ede9fe;
 
         border-color: #a78bfa;
 
         transform: translateY(-4px);
 
-        box-shadow:
-            0 6px 15px rgba(124, 58, 237, 0.15);
+        box-shadow: 0 6px 15px rgba(124, 58, 237, 0.15);
     }
 
 
@@ -279,7 +258,7 @@
     }
 
     .semester > li {
-        color: #6d28d9;
+        color: #5b21b6;
 
         font-weight: 600;
 
@@ -293,7 +272,7 @@
     }
 
     .semester ul li {
-        color: #6b5b7e;
+        color: #625574;
 
         font-weight: normal;
 
@@ -312,11 +291,7 @@
     }
 
     dt {
-        background: linear-gradient(
-            135deg,
-            #5b21b6,
-            #7c3aed
-        );
+        background: #5b21b6;
 
         color: white;
 
@@ -328,14 +303,13 @@
 
         font-weight: 600;
 
-        box-shadow:
-            0 4px 10px rgba(91, 33, 182, 0.15);
+        box-shadow: 0 4px 10px rgba(91, 33, 182, 0.15);
     }
 
     dd {
-        background: #faf5ff;
+        background: #faf8ff;
 
-        color: #6b5b7e;
+        color: #625574;
 
         padding: 15px 18px;
 
@@ -364,13 +338,13 @@
 
         padding: 14px 18px;
 
-        background: #faf5ff;
+        background: #faf8ff;
 
-        color: #6d28d9;
+        color: #5b21b6;
 
         text-decoration: none;
 
-        border: 1px solid #ddd6fe;
+        border: 1px solid #ddd2f4;
 
         border-radius: 8px;
 
@@ -378,20 +352,15 @@
     }
 
     .links li a:hover {
-        background: linear-gradient(
-            135deg,
-            #6d28d9,
-            #9333ea
-        );
+        background: #6d28d9;
 
         color: white;
 
-        border-color: #7c3aed;
+        border-color: #6d28d9;
 
         transform: translateX(5px);
 
-        box-shadow:
-            0 5px 15px rgba(124, 58, 237, 0.2);
+        box-shadow: 0 5px 15px rgba(109, 40, 217, 0.2);
     }
 
 
@@ -400,20 +369,15 @@
     ============================== */
 
     footer {
-        background: linear-gradient(
-            135deg,
-            #2e1065,
-            #4c1d95
-        );
+        background: #2e1065;
 
-        color: #ede9fe;
+        color: #e9ddff;
 
         text-align: center;
 
         padding: 25px;
 
-        box-shadow:
-            0 -5px 20px rgba(76, 29, 149, 0.15);
+        box-shadow: 0 -5px 20px rgba(76, 29, 149, 0.15);
     }
 
     footer h6 {
