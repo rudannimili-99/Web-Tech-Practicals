@@ -1,45 +1,14 @@
-// Bootstrap + custom styles
-
-@import "variables";
-@import "bootstrap/scss/bootstrap";
-@import "mixins";
-@import "components";
-
-/* ===== FORCE DARK PURPLE THEME ===== */
-
+/* Overall page */
 body {
-  background-color: #f3e8ff !important;
-  color: #2e1065 !important;
+  background: #12051f !important;
+  color: #f3e8ff !important;
 }
 
 /* Navbar */
-.navbar.bg-primary {
-  background-color: #3b0764 !important;
+.navbar {
+  background: #0d0318 !important;
 }
 
-.navbar .nav-link {
-  color: #ffffff !important;
-}
-
-.navbar .nav-link:hover {
-  color: #d8b4fe !important;
-}
-
-/* Primary buttons */
-.btn-primary {
-  background-color: #3b0764 !important;
-  border-color: #3b0764 !important;
-}
-
-.btn-primary:hover {
-  background-color: #581c87 !important;
-  border-color: #581c87 !important;
-}
-
-/* Primary text */
-.text-primary {
-  color: #3b0764 !important;
-}
 /* Hero */
 .hero {
   background: linear-gradient(
@@ -48,70 +17,51 @@ body {
     #2e0757 50%,
     #4c1d95 100%
   ) !important;
-
   color: #ffffff !important;
 }
 
 /* Sections */
-.section {
-  background-color: #f3e8ff !important;
+section {
+  background: #12051f !important;
+  color: #f3e8ff !important;
 }
 
-/* Cards */
-.feature-card,
-.course-card,
-.testimonial {
-  border-color: #e9d5ff !important;
-}
-
-/* Icons */
-.feature-card .icon {
-  background-color: #f3e8ff !important;
-  color: #7e22ce !important;
-}
-
-/* Section title */
-.section-title {
-  color: #3b0764 !important;
-}
-
-.section-title::after {
-  background-color: #7e22ce !important;
-}
-
-/* Course headers */
-.course-card .bg-html {
-  background-color: #581c87 !important;
-}
-
-.course-card .bg-js {
-  background-color: #6b21a8 !important;
-}
-
-.course-card .bg-react {
-  background-color: #7e22ce !important;
-}
-
-.course-card .bg-full {
-  background-color: #3b0764 !important;
-}
-
-/* CTA */
-.cta {
-  background: linear-gradient(
-    135deg,
-    #24003d,
-    #3b0764,
-    #581c87
-  ) !important;
-}
-
-/* Footer */
-.site-footer {
-  background-color: #24003d !important;
+/* Section headings */
+section h2,
+section h3 {
   color: #e9d5ff !important;
 }
 
-.site-footer a {
-  color: #d8b4fe !important;
+/* Course cards */
+.course-card,
+.card {
+  background: #1a0a33 !important;
+  color: #f3e8ff !important;
+  border: 1px solid #4c1d95 !important;
+}
+
+/* Card headings */
+.course-card h3,
+.card h3,
+.card h4 {
+  color: #ffffff !important;
+}
+
+/* Testimonials */
+.testimonial,
+.review-card {
+  background: #1a0a33 !important;
+  color: #f3e8ff !important;
+  border-left: 4px solid #7c3aed !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #6d28d9 !important;
+  border-color: #6d28d9 !important;
+}
+
+.btn-primary:hover {
+  background: #4c1d95 !important;
+  border-color: #4c1d95 !important;
 }
