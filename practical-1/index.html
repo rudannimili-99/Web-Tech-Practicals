@@ -24,8 +24,8 @@
 
     body {
         font-family: Arial, Helvetica, sans-serif;
-        background: #f6f3ff;
-        color: #29204a;
+        background: #10002b;
+        color: #eee8ff;
         line-height: 1.7;
     }
 
@@ -35,12 +35,20 @@
     ============================== */
 
     header {
-        background: linear-gradient(135deg, #4b1d95, #6d28d9);
+        background: linear-gradient(
+            135deg,
+            #240046,
+            #3c096c,
+            #5a189a
+        );
+
         color: white;
         text-align: center;
+
         padding: 45px 20px 55px;
 
-        box-shadow: 0 8px 25px rgba(76, 29, 149, 0.25);
+        box-shadow:
+            0 8px 30px rgba(0, 0, 0, 0.45);
     }
 
     header h1 {
@@ -53,14 +61,14 @@
     header h2 {
         font-size: 22px;
         font-weight: 400;
-        color: #e9ddff;
+        color: #d8b4fe;
         margin-bottom: 5px;
     }
 
     header h3 {
         font-size: 17px;
         font-weight: 400;
-        color: #ddd0ff;
+        color: #e9d5ff;
     }
 
 
@@ -75,18 +83,21 @@
         object-fit: cover;
         border-radius: 50%;
 
-        border: 5px solid white;
+        border: 5px solid #f3e8ff;
 
         margin: 25px 0 10px;
 
-        box-shadow: 0 8px 25px rgba(30, 15, 70, 0.35);
+        box-shadow:
+            0 8px 30px rgba(0, 0, 0, 0.55);
 
         transition: 0.3s ease;
     }
 
     .profile-image:hover {
         transform: scale(1.05);
-        box-shadow: 0 12px 30px rgba(109, 40, 217, 0.45);
+
+        box-shadow:
+            0 12px 35px rgba(157, 78, 221, 0.45);
     }
 
 
@@ -107,7 +118,7 @@
     ============================== */
 
     .section {
-        background: #ffffff;
+        background: #1b1235;
 
         padding: 32px;
 
@@ -115,9 +126,10 @@
 
         border-radius: 14px;
 
-        border: 1px solid #e2d9f7;
+        border: 1px solid #3c2463;
 
-        box-shadow: 0 5px 18px rgba(76, 29, 149, 0.10);
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.30);
 
         transition: 0.25s ease;
     }
@@ -125,7 +137,10 @@
     .section:hover {
         transform: translateY(-3px);
 
-        box-shadow: 0 10px 30px rgba(76, 29, 149, 0.17);
+        border-color: #7b2cbf;
+
+        box-shadow:
+            0 12px 35px rgba(0, 0, 0, 0.40);
     }
 
 
@@ -134,7 +149,7 @@
     ============================== */
 
     .section h4 {
-        color: #5b21b6;
+        color: #c77dff;
 
         font-size: 24px;
 
@@ -142,7 +157,7 @@
 
         padding-bottom: 10px;
 
-        border-bottom: 2px solid #eee7ff;
+        border-bottom: 2px solid #332052;
 
         position: relative;
     }
@@ -158,7 +173,7 @@
         width: 55px;
         height: 3px;
 
-        background: #7c3aed;
+        background: #9d4edd;
 
         border-radius: 5px;
     }
@@ -169,21 +184,22 @@
     ============================== */
 
     .about p {
-        color: #514568;
+        color: #d8cbea;
         margin-bottom: 15px;
     }
 
     strong {
-        color: #4c1d95;
+        color: #d8b4fe;
     }
 
     em {
-        color: #7c3aed;
+        color: #c77dff;
     }
 
     mark {
-        background: #ede9fe;
-        color: #5b21b6;
+        background: #3c096c;
+
+        color: #f3e8ff;
 
         padding: 3px 7px;
 
@@ -200,7 +216,7 @@
 
         height: 1px;
 
-        background: #ddd4f2;
+        background: #3c2463;
 
         margin: 30px 0;
     }
@@ -221,7 +237,7 @@
     }
 
     .skills li {
-        background: #faf8ff;
+        background: #24163f;
 
         padding: 18px;
 
@@ -229,9 +245,9 @@
 
         border-radius: 10px;
 
-        border: 1px solid #ddd2f4;
+        border: 1px solid #4c2a73;
 
-        color: #5b21b6;
+        color: #d8b4fe;
 
         font-weight: 600;
 
@@ -239,13 +255,14 @@
     }
 
     .skills li:hover {
-        background: #ede9fe;
+        background: #3c096c;
 
-        border-color: #a78bfa;
+        border-color: #9d4edd;
 
         transform: translateY(-4px);
 
-        box-shadow: 0 6px 15px rgba(124, 58, 237, 0.15);
+        box-shadow:
+            0 8px 20px rgba(157, 78, 221, 0.20);
     }
 
 
@@ -258,7 +275,7 @@
     }
 
     .semester > li {
-        color: #5b21b6;
+        color: #c77dff;
 
         font-weight: 600;
 
@@ -272,7 +289,7 @@
     }
 
     .semester ul li {
-        color: #625574;
+        color: #cfc2df;
 
         font-weight: normal;
 
@@ -291,7 +308,11 @@
     }
 
     dt {
-        background: #5b21b6;
+        background: linear-gradient(
+            135deg,
+            #3c096c,
+            #5a189a
+        );
 
         color: white;
 
@@ -303,19 +324,20 @@
 
         font-weight: 600;
 
-        box-shadow: 0 4px 10px rgba(91, 33, 182, 0.15);
+        box-shadow:
+            0 5px 15px rgba(0, 0, 0, 0.25);
     }
 
     dd {
-        background: #faf8ff;
+        background: #24163f;
 
-        color: #625574;
+        color: #cfc2df;
 
         padding: 15px 18px;
 
         margin-left: 15px;
 
-        border-left: 3px solid #8b5cf6;
+        border-left: 3px solid #9d4edd;
 
         border-radius: 0 7px 7px 0;
     }
@@ -338,13 +360,13 @@
 
         padding: 14px 18px;
 
-        background: #faf8ff;
+        background: #24163f;
 
-        color: #5b21b6;
+        color: #d8b4fe;
 
         text-decoration: none;
 
-        border: 1px solid #ddd2f4;
+        border: 1px solid #4c2a73;
 
         border-radius: 8px;
 
@@ -352,15 +374,16 @@
     }
 
     .links li a:hover {
-        background: #6d28d9;
+        background: #7b2cbf;
 
         color: white;
 
-        border-color: #6d28d9;
+        border-color: #9d4edd;
 
         transform: translateX(5px);
 
-        box-shadow: 0 5px 15px rgba(109, 40, 217, 0.2);
+        box-shadow:
+            0 6px 18px rgba(157, 78, 221, 0.25);
     }
 
 
@@ -369,15 +392,16 @@
     ============================== */
 
     footer {
-        background: #2e1065;
+        background: #08001c;
 
-        color: #e9ddff;
+        color: #cbb8e8;
 
         text-align: center;
 
         padding: 25px;
 
-        box-shadow: 0 -5px 20px rgba(76, 29, 149, 0.15);
+        box-shadow:
+            0 -5px 20px rgba(0, 0, 0, 0.35);
     }
 
     footer h6 {
