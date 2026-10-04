@@ -1,6 +1,119 @@
-// Bootstrap + custom styles
+// ===== Bootstrap + Custom Dark Purple Theme =====
 
 @import "variables";
 @import "bootstrap/scss/bootstrap";
 @import "mixins";
 @import "components";
+
+/* ===== FORCE DARK PURPLE THEME ===== */
+
+body {
+  background-color: #f3e8ff !important;
+  color: #2e1065 !important;
+}
+
+/* Navbar */
+.navbar.bg-primary {
+  background-color: #3b0764 !important;
+}
+
+/* Primary buttons */
+.btn-primary {
+  background-color: #3b0764 !important;
+  border-color: #3b0764 !important;
+}
+
+.btn-primary:hover {
+  background-color: #581c87 !important;
+  border-color: #581c87 !important;
+}
+
+/* Primary text */
+.text-primary {
+  color: #3b0764 !important;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(
+    135deg,
+    #24003d 0%,
+    #3b0764 50%,
+    #581c87 100%
+  ) !important;
+  color: #fff !important;
+}
+
+/* Sections */
+.section {
+  background-color: #f3e8ff;
+}
+
+/* Cards */
+.feature-card,
+.course-card,
+.testimonial {
+  border-color: #e9d5ff !important;
+}
+
+/* Course headers */
+.course-card .bg-html {
+  background-color: #581c87 !important;
+}
+
+.course-card .bg-js {
+  background-color: #6b21a8 !important;
+}
+
+.course-card .bg-react {
+  background-color: #7e22ce !important;
+}
+
+.course-card .bg-full {
+  background-color: #3b0764 !important;
+}
+
+/* CTA */
+.cta {
+  background: linear-gradient(
+    135deg,
+    #24003d,
+    #3b0764,
+    #581c87
+  ) !important;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #24003d !important;
+  color: #e9d5ff !important;
+}
+
+/* Footer links */
+.site-footer a {
+  color: #d8b4fe !important;
+}
+
+/* Icons */
+.feature-card .icon {
+  background-color: #f3e8ff !important;
+  color: #7e22ce !important;
+}
+
+/* Section title */
+.section-title {
+  color: #3b0764 !important;
+}
+
+.section-title::after {
+  background-color: #7e22ce !important;
+}
+
+/* Navbar links */
+.navbar .nav-link {
+  color: #fff !important;
+}
+
+.navbar .nav-link:hover {
+  color: #d8b4fe !important;
+}
