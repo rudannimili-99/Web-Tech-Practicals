@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Handling & Validation | Experiment 9</title>
+
+  <title>JavaScript Form Validation | Experiment 9</title>
 
   <style>
+    /* ===== BASIC RESET ===== */
     * {
       box-sizing: border-box;
     }
 
+    /* ===== PAGE ===== */
     body {
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
-      background: #eef2f8;
-      color: #1f2937;
+      background: #f3e8ff;
+      color: #2e1065;
     }
 
+    /* ===== MAIN LAYOUT ===== */
     .wrapper {
       display: grid;
       grid-template-columns: 1.3fr 1fr;
@@ -27,35 +30,40 @@
       padding: 0 20px;
     }
 
+    /* ===== FORM AND EVENTS CARDS ===== */
     form,
     .events {
-      background: #fff;
-      border-radius: 10px;
+      background: #ffffff;
+      border-radius: 12px;
       padding: 22px 26px;
-      box-shadow: 0 4px 14px rgba(27, 42, 74, 0.08);
+      box-shadow: 0 5px 18px rgba(59, 7, 100, 0.15);
     }
 
+    /* ===== HEADINGS ===== */
     h1 {
-      font-size: 1.35rem;
-      color: #1b2a4a;
+      font-size: 1.5rem;
+      color: #3b0764;
       margin-top: 0;
+      margin-bottom: 20px;
     }
 
     h2 {
       font-size: 1.1rem;
-      color: #1b2a4a;
+      color: #581c87;
       margin-top: 0;
     }
 
+    /* ===== FORM FIELDS ===== */
     .field {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .field label {
       display: block;
       font-weight: 600;
       font-size: 0.9rem;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
+      color: #3b0764;
     }
 
     .field input[type="text"],
@@ -63,12 +71,21 @@
     .field input[type="tel"],
     .field input[type="password"] {
       width: 100%;
-      padding: 9px 11px;
-      border: 1.5px solid #cbd5e1;
-      border-radius: 6px;
+      padding: 10px 11px;
+      border: 1.5px solid #c4b5fd;
+      border-radius: 7px;
       font-size: 0.95rem;
+      background: #ffffff;
+      color: #2e1065;
     }
 
+    .field input:focus {
+      outline: none;
+      border-color: #7e22ce;
+      box-shadow: 0 0 0 3px rgba(126, 34, 206, 0.15);
+    }
+
+    /* ===== INLINE FIELDS ===== */
     .field.inline {
       display: flex;
       align-items: center;
@@ -86,7 +103,7 @@
       flex-basis: 100%;
     }
 
-    /* States toggled from JavaScript */
+    /* ===== VALID / INVALID STATES ===== */
     .field.invalid input {
       border-color: #dc2626;
       background: #fef2f2;
@@ -97,22 +114,26 @@
       background: #f0fdf4;
     }
 
+    /* ===== ERROR MESSAGE ===== */
     .error {
       color: #dc2626;
       font-size: 0.8rem;
       min-height: 1em;
       display: block;
+      margin-top: 3px;
     }
 
+    /* ===== HINT ===== */
     .hint {
-      color: #64748b;
+      color: #7e22ce;
       font-size: 0.8rem;
     }
 
+    /* ===== PASSWORD STRENGTH METER ===== */
     .meter {
-      height: 6px;
-      background: #e5e7eb;
-      border-radius: 3px;
+      height: 7px;
+      background: #e9d5ff;
+      border-radius: 4px;
       margin-top: 6px;
       overflow: hidden;
     }
@@ -124,21 +145,25 @@
       transition: width 0.3s, background 0.3s;
     }
 
+    /* ===== SUBMIT BUTTON ===== */
     button {
       width: 100%;
       padding: 11px;
       border: none;
-      border-radius: 6px;
-      background: #1b2a4a;
-      color: #fff;
+      border-radius: 7px;
+      background: #3b0764;
+      color: #ffffff;
       font-size: 1rem;
       cursor: pointer;
+      transition: 0.3s;
     }
 
     button:hover {
-      background: #2f5d9f;
+      background: #7e22ce;
+      transform: translateY(-1px);
     }
 
+    /* ===== FORM MESSAGE ===== */
     #formMessage {
       margin: 12px 0 0;
       padding: 0;
@@ -149,34 +174,39 @@
       color: #15803d;
       background: #dcfce7;
       padding: 10px;
-      border-radius: 6px;
+      border-radius: 7px;
     }
 
     #formMessage.fail {
       color: #b91c1c;
       background: #fee2e2;
       padding: 10px;
-      border-radius: 6px;
+      border-radius: 7px;
     }
 
+    /* ===== EVENT DEMO BOX ===== */
     .hover-box {
       padding: 22px;
       text-align: center;
-      border: 2px dashed #94a3b8;
-      border-radius: 8px;
-      transition: background 0.2s;
+      border: 2px dashed #a855f7;
+      border-radius: 9px;
+      background: #faf5ff;
+      transition: background 0.2s, border-color 0.2s;
       user-select: none;
+      cursor: pointer;
     }
 
     .hover-box.active {
-      background: #dbeafe;
-      border-color: #3b82f6;
+      background: #e9d5ff;
+      border-color: #7e22ce;
     }
 
     .hover-box.clicked {
-      background: #fde68a;
+      background: #ddd6fe;
+      border-color: #581c87;
     }
 
+    /* ===== EVENT LOG ===== */
     #log {
       list-style: none;
       padding: 0;
@@ -187,13 +217,30 @@
     }
 
     #log li {
-      padding: 4px 6px;
-      border-bottom: 1px solid #eef2f8;
+      padding: 5px 7px;
+      border-bottom: 1px solid #e9d5ff;
+      color: #4c1d95;
     }
 
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       .wrapper {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      body {
+        background: #f3e8ff;
+      }
+
+      .wrapper {
+        padding: 0 12px;
+      }
+
+      form,
+      .events {
+        padding: 18px;
       }
     }
   </style>
@@ -201,88 +248,129 @@
 
 <body>
 
-  <main class="wrapper">
+  <div class="wrapper">
 
-    <!-- Registration form validated with JavaScript -->
-    <form id="signupForm" novalidate>
+    <!-- ================= FORM ================= -->
+    <form id="registrationForm">
 
-      <h1>Create CodingPro Account</h1>
+      <h1>Student Registration Form</h1>
 
-      <div class="field">
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" placeholder="e.g. Mili Atulbhai Rudani">
-        <small class="error"></small>
+      <!-- Name -->
+      <div class="field" id="nameField">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+        >
+        <span class="error" id="nameError"></span>
       </div>
 
-      <div class="field">
+      <!-- Email -->
+      <div class="field" id="emailField">
         <label for="email">Email</label>
-        <input type="email" id="email" placeholder="name@example.com">
-        <small class="error"></small>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+        >
+        <span class="error" id="emailError"></span>
       </div>
 
-      <div class="field">
+      <!-- Mobile -->
+      <div class="field" id="mobileField">
         <label for="mobile">Mobile Number</label>
-        <input type="tel" id="mobile" placeholder="10-digit number" maxlength="10">
-        <small class="error"></small>
+        <input
+          type="tel"
+          id="mobile"
+          name="mobile"
+          placeholder="Enter 10-digit mobile number"
+        >
+        <span class="error" id="mobileError"></span>
       </div>
 
-      <div class="field">
+      <!-- Password -->
+      <div class="field" id="passwordField">
         <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Min 8 chars, 1 uppercase, 1 digit">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter password"
+        >
 
         <div class="meter">
           <span id="strengthBar"></span>
         </div>
 
-        <small id="strengthText" class="hint"></small>
-        <small class="error"></small>
+        <span class="hint" id="strengthText">
+          Password strength
+        </span>
+
+        <span class="error" id="passwordError"></span>
       </div>
 
-      <div class="field">
-        <label for="confirm">Confirm Password</label>
-        <input type="password" id="confirm">
-        <small class="error"></small>
+      <!-- Confirm Password -->
+      <div class="field" id="confirmField">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Re-enter password"
+        >
+        <span class="error" id="confirmError"></span>
       </div>
 
-      <div class="field inline">
-        <input type="checkbox" id="terms">
-        <label for="terms">I accept the terms and conditions</label>
-        <small class="error"></small>
+      <!-- Terms -->
+      <div class="field inline" id="termsField">
+        <input
+          type="checkbox"
+          id="terms"
+          name="terms"
+        >
+
+        <label for="terms">
+          I agree to the terms and conditions
+        </label>
+
+        <span class="error" id="termsError"></span>
       </div>
 
-      <button type="submit" id="submitBtn">Register</button>
+      <!-- Submit -->
+      <button type="submit">
+        Register
+      </button>
 
-      <p id="formMessage" role="status"></p>
+      <p id="formMessage"></p>
 
     </form>
 
-    <!-- Panel that demonstrates other event types -->
-    <aside class="events">
 
-      <h2>Event Log</h2>
+    <!-- ================= EVENTS ================= -->
+    <section class="events">
 
-      <div id="hoverBox" class="hover-box">
-        Hover / double-click me
+      <h2>JavaScript Events</h2>
+
+      <div class="hover-box" id="hoverBox">
+        Hover and click this box
       </div>
 
-      <p>
-        Characters typed in name:
-        <strong id="charCount">0</strong>
-      </p>
-
-      <p>
-        Last key pressed:
-        <strong id="lastKey">&ndash;</strong>
-      </p>
+      <h2 style="margin-top: 22px;">
+        Event Log
+      </h2>
 
       <ul id="log"></ul>
 
-    </aside>
+    </section>
 
-  </main>
+  </div>
 
+
+  <!-- JavaScript -->
   <script src="validate.js"></script>
 
 </body>
-
 </html>
