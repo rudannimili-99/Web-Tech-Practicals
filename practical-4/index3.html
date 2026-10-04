@@ -14,8 +14,8 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #1f2937;
+      background: #f5f3ff;
+      color: #2e1065;
     }
 
     a {
@@ -27,7 +27,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #1b2a4a;
+      background: #4c1d95;
       padding: 15px 30px;
       color: white;
     }
@@ -38,7 +38,7 @@
     }
 
     .logo span {
-      color: #f59e0b;
+      color: #c4b5fd;
     }
 
     .nav-links {
@@ -52,10 +52,11 @@
     .nav-links a {
       color: white;
       font-weight: 600;
+      transition: 0.3s;
     }
 
     .nav-links a:hover {
-      color: #f59e0b;
+      color: #c4b5fd;
     }
 
     /* ---------- CSS Grid Page Layout ---------- */
@@ -72,7 +73,7 @@
 
     .hero {
       grid-area: hero;
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      background: linear-gradient(135deg, #6d28d9, #a855f7);
       color: white;
       text-align: center;
       padding: 50px 20px;
@@ -91,13 +92,13 @@
     /* ---------- Sidebar ---------- */
     .sidebar {
       grid-area: sidebar;
-      background: white;
+      background: #ffffff;
       padding: 25px;
-      border-right: 1px solid #dbe2ea;
+      border-right: 1px solid #ddd6fe;
     }
 
     .sidebar h3 {
-      color: #1b2a4a;
+      color: #5b21b6;
     }
 
     .sidebar ul {
@@ -108,8 +109,15 @@
     .sidebar li {
       padding: 10px;
       margin-bottom: 8px;
-      background: #eef2ff;
+      background: #ede9fe;
+      color: #4c1d95;
       border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .sidebar li:hover {
+      background: #ddd6fe;
+      transform: translateX(4px);
     }
 
     /* ---------- Main Content ---------- */
@@ -119,8 +127,8 @@
     }
 
     .content h2 {
-      color: #1b2a4a;
-      border-bottom: 2px solid #cbd5e1;
+      color: #4c1d95;
+      border-bottom: 2px solid #c4b5fd;
       padding-bottom: 8px;
     }
 
@@ -134,28 +142,36 @@
 
     .card {
       flex: 1 1 200px;
-      background: white;
+      background: #ffffff;
       padding: 22px;
       border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e9d5ff;
+      box-shadow: 0 5px 15px rgba(76, 29, 149, 0.12);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(109, 40, 217, 0.2);
     }
 
     .card h3 {
-      color: #2563eb;
+      color: #6d28d9;
       margin-top: 0;
     }
 
     .card a {
       display: inline-block;
-      background: #2563eb;
+      background: #7c3aed;
       color: white;
       padding: 8px 15px;
       border-radius: 6px;
       margin-top: 8px;
+      transition: 0.3s;
     }
 
     .card a:hover {
-      background: #1d4ed8;
+      background: #5b21b6;
     }
 
     /* ---------- CSS Grid Gallery ---------- */
@@ -170,27 +186,33 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #dbeafe;
-      color: #1e3a8a;
+      background: #ede9fe;
+      color: #4c1d95;
       font-weight: bold;
       border-radius: 12px;
       padding: 15px;
+      transition: 0.3s;
+    }
+
+    .item:hover {
+      transform: scale(1.02);
+      background: #ddd6fe;
     }
 
     .item.big {
       grid-row: span 2;
-      background: #c7d2fe;
+      background: #ddd6fe;
     }
 
     .item.wide {
       grid-column: span 2;
-      background: #ddd6fe;
+      background: #e9d5ff;
     }
 
     /* ---------- Footer ---------- */
     .footer {
       grid-area: footer;
-      background: #1b2a4a;
+      background: #4c1d95;
       color: white;
       text-align: center;
       padding: 18px;
@@ -221,7 +243,7 @@
 
       .sidebar {
         border-right: none;
-        border-bottom: 1px solid #dbe2ea;
+        border-bottom: 1px solid #ddd6fe;
       }
 
       .gallery {
@@ -249,7 +271,7 @@
         grid-row: span 1;
       }
     }
-  </style>
+</style>
 </head>
 
 <body>
