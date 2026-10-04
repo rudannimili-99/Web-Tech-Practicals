@@ -1,4 +1,4 @@
-// ===== Bootstrap + Custom Dark Purple Theme =====
+// Bootstrap + custom styles
 
 @import "variables";
 @import "bootstrap/scss/bootstrap";
@@ -40,14 +40,13 @@ body {
 .text-primary {
   color: #3b0764 !important;
 }
-
 /* Hero */
 .hero {
   background: linear-gradient(
     135deg,
-    #24003d 0%,
-    #3b0764 50%,
-    #581c87 100%
+    #12051f 0%,
+    #2e0757 50%,
+    #4c1d95 100%
   ) !important;
 
   color: #ffffff !important;
