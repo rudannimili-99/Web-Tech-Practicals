@@ -7,163 +7,202 @@
   <title>Student Marks Manager | Experiment 8</title>
 
   <style>
-    * {
-      box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f3e8ff;
+    color: #2e1065;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  body.dark {
+    background: #1e0b36;
+    color: #f3e8ff;
+  }
+
+  header {
+    background: #3b0764;
+    color: #fff;
+    padding: 20px 28px;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+  header p {
+    margin: 4px 0 0;
+    color: #ddd6fe;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .panel {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  .panel input,
+  .panel select {
+    padding: 9px 10px;
+    border: 1px solid #c4b5fd;
+    border-radius: 6px;
+    flex: 1;
+    background: #fff;
+    color: #2e1065;
+  }
+
+  button {
+    padding: 9px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #581c87;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #3b0764;
+  }
+
+  .toolbar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  .toolbar button {
+    background: #7e22ce;
+  }
+
+  .toolbar button:hover {
+    background: #581c87;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(59, 7, 100, 0.15);
+  }
+
+  body.dark table {
+    background: #2e1065;
+  }
+
+  th,
+  td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd6fe;
+  }
+
+  th {
+    background: #e9d5ff;
+    color: #3b0764;
+  }
+
+  body.dark th {
+    background: #581c87;
+    color: #fff;
+  }
+
+  .pass {
+    color: #15803d;
+    font-weight: 600;
+  }
+
+  .fail {
+    color: #dc2626;
+    font-weight: 600;
+  }
+
+  tr.new-row {
+    animation: flash 1s ease;
+  }
+
+  @keyframes flash {
+    from {
+      background: #e9d5ff;
     }
 
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #f5f7fb;
-      color: #1f2937;
-      transition: background 0.3s;
+    to {
+      background: transparent;
     }
+  }
 
-    body.dark {
-      background: #0f172a;
-      color: #e2e8f0;
-    }
+  .delete {
+    background: #dc2626;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+  }
 
-    header {
-      background: #1b2a4a;
-      color: #fff;
-      padding: 18px 28px;
-    }
+  .delete:hover {
+    background: #991b1b;
+  }
 
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
 
-    header p {
-      margin: 4px 0 0;
-      color: #cbd5e1;
+  .stat {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    border-top: 3px solid #7e22ce;
+    box-shadow: 0 4px 12px rgba(59, 7, 100, 0.12);
+  }
+
+  body.dark .stat {
+    background: #2e1065;
+    color: #fff;
+  }
+
+  .stat strong {
+    display: block;
+    font-size: 1.4rem;
+    color: #581c87;
+  }
+
+  body.dark .stat strong {
+    color: #d8b4fe;
+  }
+
+  @media (max-width: 700px) {
+    .stats {
+      grid-template-columns: repeat(2, 1fr);
     }
 
     main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
+      padding: 15px;
     }
+  }
 
-    .panel {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-
-    .panel input,
-    .panel select {
-      padding: 8px 10px;
-      border: 1px solid #94a3b8;
-      border-radius: 6px;
-      flex: 1;
-    }
-
-    button {
-      padding: 8px 14px;
-      border: none;
-      border-radius: 6px;
-      background: #1b2a4a;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #2f5d9f;
-    }
-
-    .toolbar {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-
-    .toolbar button {
-      background: #475569;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    body.dark table {
-      background: #1e293b;
-    }
-
-    th,
-    td {
-      padding: 10px 12px;
-      text-align: left;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    th {
-      background: #e2e8f0;
-      color: #1b2a4a;
-    }
-
-    .pass {
-      color: #15803d;
-      font-weight: 600;
-    }
-
-    .fail {
-      color: #dc2626;
-      font-weight: 600;
-    }
-
-    tr.new-row {
-      animation: flash 1s ease;
-    }
-
-    @keyframes flash {
-      from {
-        background: #fef3c7;
-      }
-
-      to {
-        background: transparent;
-      }
-    }
-
-    .delete {
-      background: #dc2626;
-      padding: 4px 10px;
-      font-size: 0.8rem;
-    }
-
+  @media (max-width: 450px) {
     .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 16px;
+      grid-template-columns: 1fr;
     }
-
-    .stat {
-      background: #fff;
-      border-radius: 8px;
-      padding: 12px;
-      text-align: center;
-      border-top: 3px solid #3b82f6;
-    }
-
-    body.dark .stat {
-      background: #1e293b;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.4rem;
-    }
-  </style>
-
+  }
+</style>
 </head>
 
 <body>
