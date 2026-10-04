@@ -1,7 +1,7 @@
-$primary: #6d28d9;
+$primary: #2e0757;
 $secondary: #4c1d95;
 $success: #a855f7;
-$info: #8b5cf6;
+$info: #7e22ce;
 $warning: #c084fc;
 $danger: #dc2626;
 
@@ -15,3 +15,5 @@ $font-family-sans-serif: "Segoe UI", Arial, sans-serif;
 $headings-font-family: Georgia, "Times New Roman", serif;
 
 $border-radius: 0.6rem;
+$section-gap: 4rem;
+$brand-gradient: linear-gradient(135deg, $primary, $secondary);
