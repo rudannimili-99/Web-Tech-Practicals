@@ -117,3 +117,82 @@ body {
 .navbar .nav-link:hover {
   color: #d8b4fe !important;
 }
+/* ===== DARK PURPLE THEME ===== */
+
+body {
+  background-color: #f3e8ff !important;
+  color: #2e1065 !important;
+}
+
+.navbar.bg-primary {
+  background-color: #3b0764 !important;
+}
+
+.btn-primary {
+  background-color: #3b0764 !important;
+  border-color: #3b0764 !important;
+}
+
+.btn-primary:hover {
+  background-color: #581c87 !important;
+  border-color: #581c87 !important;
+}
+
+.text-primary {
+  color: #3b0764 !important;
+}
+
+.hero {
+  background: linear-gradient(135deg, #24003d, #3b0764, #581c87) !important;
+  color: #fff !important;
+}
+
+.section-title {
+  color: #3b0764 !important;
+}
+
+.section-title::after {
+  background-color: #7e22ce !important;
+}
+
+.feature-card .icon {
+  background-color: #f3e8ff !important;
+  color: #7e22ce !important;
+}
+
+.course-card .bg-html {
+  background-color: #581c87 !important;
+}
+
+.course-card .bg-js {
+  background-color: #6b21a8 !important;
+}
+
+.course-card .bg-react {
+  background-color: #7e22ce !important;
+}
+
+.course-card .bg-full {
+  background-color: #3b0764 !important;
+}
+
+.cta {
+  background: linear-gradient(135deg, #24003d, #3b0764, #581c87) !important;
+}
+
+.site-footer {
+  background-color: #24003d !important;
+  color: #e9d5ff !important;
+}
+
+.site-footer a {
+  color: #d8b4fe !important;
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+}
+
+.navbar .nav-link:hover {
+  color: #d8b4fe !important;
+}
