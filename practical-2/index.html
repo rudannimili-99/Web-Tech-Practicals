@@ -1,47 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practical 2</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #f5f3ff;
-        }
-
-        iframe {
-            display: block;
-            width: 100%;
-            border: none;
-        }
-
-        .registration {
-            height: 1000px;
-        }
-
-        .media {
-            height: 1800px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop Registration | Experiment 2</title>
 </head>
-
 <body>
+  <h1>CodingPro Web Workshop &ndash; Registration</h1>
 
-    <!-- Registration Page -->
-    <iframe
-        class="registration"
-        src="register.html"
-        title="Workshop Registration">
-    </iframe>
+  <!-- FORM: common input types, grouping and labels -->
+  <form action="#" method="post">
+    <fieldset>
+      <legend>Personal Details</legend>
+      <p>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </p>
+      <p>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="name@example.com" required>
+      </p>
+      <p>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+        &nbsp;
+        <label for="phone">Mobile:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10 digits">
+      </p>
+      <p>
+        Gender:
+        <input type="radio" id="m" name="gender" value="male"> <label for="m">Male</label>
+        <input type="radio" id="f" name="gender" value="female"> <label for="f">Female</label>
+        <input type="radio" id="o" name="gender" value="other"> <label for="o">Other</label>
+      </p>
+    </fieldset>
 
-    <!-- Media Page -->
-    <iframe
-        class="media"
-        src="media.html"
-        title="Media and Semantic HTML">
-    </iframe>
+    <fieldset>
+      <legend>Academic Details</legend>
+      <p>
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch">
+          <option>Computer Engineering</option>
+          <option>Information Technology</option>
+          <option>AI &amp; Data Science</option>
+        </select>
+        &nbsp;
+        <label for="sem">Semester:</label>
+        <input type="number" id="sem" name="sem" min="1" max="8" value="3">
+      </p>
+      <p>
+        Interests:
+        <input type="checkbox" id="c1" name="topic" value="html" checked> <label for="c1">HTML</label>
+        <input type="checkbox" id="c2" name="topic" value="css"> <label for="c2">CSS</label>
+        <input type="checkbox" id="c3" name="topic" value="js"> <label for="c3">JavaScript</label>
+      </p>
+      <p>
+        <label for="msg">Why do you want to join?</label><br>
+        <textarea id="msg" name="msg" rows="3" cols="50"></textarea>
+      </p>
+      <p>
+        <label for="resume">Upload Resume (PDF):</label>
+        <input type="file" id="resume" name="resume" accept=".pdf">
+      </p>
+    </fieldset>
+    <p>
+      <input type="submit" value="Register">
+      <input type="reset" value="Clear">
+    </p>
+  </form>
 
+  <!-- TABLE: caption, thead/tbody/tfoot, rowspan and colspan -->
+  <table border="1" cellpadding="8" cellspacing="0">
+    <caption><strong>Workshop Schedule</strong></caption>
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Time</th>
+        <th>Session</th>
+        <th>Trainer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2">Monday</td>
+        <td>10:00 &ndash; 12:00</td>
+        <td>HTML Fundamentals</td>
+        <td rowspan="2">Prof. R. Shah</td>
+      </tr>
+      <tr>
+        <td>13:00 &ndash; 15:00</td>
+        <td>Forms &amp; Tables</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>10:00 &ndash; 12:00</td>
+        <td>CSS Basics</td>
+        <td>Ms. P. Iyer</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4">Venue: Lab 204, Block B</td>
+      </tr>
+    </tfoot>
+  </table>
 </body>
 </html>
