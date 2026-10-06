@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Registration</title>
+</head>
+
+<body>
+
+<h1>Workshop Registration</h1>
+
+<form>
+
+<fieldset>
+<legend>Participant Details</legend>
+
+<label>Full Name:</label>
+<input type="text" required>
+<br><br>
+
+<label>Email:</label>
+<input type="email" required>
+<br><br>
+
+<label>Telephone:</label>
+<input type="tel" pattern="[0-9]{10}" required>
+<br><br>
+
+<label>Workshop Date:</label>
+<input type="date" required>
+<br><br>
+
+<label>Gender:</label>
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+<input type="radio" name="gender"> Other
+<br><br>
+
+<label>Workshop:</label>
+<select>
+    <option>Web Development</option>
+    <option>Python Programming</option>
+    <option>Artificial Intelligence</option>
+    <option>Cyber Security</option>
+</select>
+<br><br>
+
+<label>Number of Participants:</label>
+<input type="number" min="1" max="10">
+<br><br>
+
+<label>
+    <input type="checkbox" required>
+    I agree to the terms and conditions.
+</label>
+<br><br>
+
+<label>Comments:</label>
+<br>
+<textarea rows="4" cols="40"></textarea>
+<br><br>
+
+<label>Upload File:</label>
+<input type="file">
+<br><br>
+
+<button type="submit">Register</button>
+<button type="reset">Reset</button>
+
+</fieldset>
+
+</form>
+
+</body>
+</html>
