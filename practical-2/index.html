@@ -6,6 +6,7 @@
     <title>Practical 2</title>
 
     <style>
+        html,
         body {
             margin: 0;
             padding: 0;
@@ -15,6 +16,16 @@
             display: block;
             width: 100%;
             border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #registrationFrame {
+            height: 600px;
+        }
+
+        #mediaFrame {
+            height: 1800px;
         }
     </style>
 </head>
@@ -34,18 +45,6 @@
         src="media.html"
         title="Media and Semantic HTML">
     </iframe>
-
-    <script>
-        function resizeFrame(frame) {
-            frame.onload = function () {
-                frame.style.height =
-                    frame.contentWindow.document.documentElement.scrollHeight + "px";
-            };
-        }
-
-        resizeFrame(document.getElementById("registrationFrame"));
-        resizeFrame(document.getElementById("mediaFrame"));
-    </script>
 
 </body>
 </html>
