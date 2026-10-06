@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mili Atulbhai Rudani | Practical Links</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f1fb;
+            color: #29223d;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        /* =========================
+           HEADING
+        ========================== */
+
+        h1 {
+            text-align: center;
+            color: #7045a8;
+            font-size: 32px;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+        /* =========================
+           MAIN BOX
+        ========================== */
+
+        .profile-box {
+            display: grid;
+            grid-template-columns: 40% 60%;
+
+            background: white;
+
+            border: 2px solid #bda6dd;
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 25px rgba(88, 55, 130, 0.15);
+        }
+
+        /* =========================
+           PROFILE SECTION
+        ========================== */
+
+        .profile-section {
+            text-align: center;
+            background: #fcfaff;
+
+            padding: 25px;
+
+            border-right: 1px solid #d8c8eb;
+        }
+
+        .profile-section h2,
+        .links-section h2 {
+
+            background: #7652b8;
+
+            color: white;
+
+            padding: 12px;
+
+            margin: -25px -25px 25px -25px;
+
+            font-size: 18px;
+
+            text-align: center;
+        }
+
+        /* =========================
+           PROFILE IMAGE
+        ========================== */
+
+        .profile-image {
+
+            width: 190px;
+            height: 220px;
+
+            object-fit: cover;
+
+            border-radius: 12px;
+
+            border: 5px solid #e3d7f3;
+
+            box-shadow:
+                0 5px 15px rgba(80, 50, 120, 0.2);
+
+            margin-top: 10px;
+        }
+
+        /* =========================
+           NAME BELOW PHOTO
+        ========================== */
+
+        .name {
+
+            margin-top: 18px;
+
+            font-size: 25px;
+
+            line-height: 1.4;
+
+            font-weight: bold;
+
+            color: #503482;
+        }
+
+        .name::after {
+
+            content: "";
+
+            display: block;
+
+            width: 60px;
+
+            height: 3px;
+
+            background: #7652b8;
+
+            margin: 12px auto 0;
+
+            border-radius: 5px;
+        }
+
+        /* =========================
+           LINKS SECTION
+        ========================== */
+
+        .links-section {
+
+            background: #ffffff;
+
+            padding: 25px;
+        }
+
+        .links-section a {
+
+            display: block;
+
+            text-decoration: none;
+
+            color: #62419a;
+
+            background: #f0e8fa;
+
+            padding: 11px 15px;
+
+            margin-bottom: 9px;
+
+            border-radius: 8px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            border-left: 4px solid #7652b8;
+
+            transition: 0.3s;
+        }
+
+        .links-section a:hover {
+
+            background: #7652b8;
+
+            color: white;
+
+            padding-left: 22px;
+
+            transform: translateX(3px);
+        }
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .profile-box {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-section {
+
+                border-right: none;
+
+                border-bottom: 1px solid #d8c8eb;
+            }
+
+            .profile-image {
+
+                width: 170px;
+                height: 200px;
+            }
+
+            .name {
+
+                font-size: 24px;
+
+                margin-bottom: 10px;
+            }
+
+            .links-section {
+
+                padding-bottom: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <!-- =========================
+         PAGE TITLE
+    ========================== -->
+
+    <h1>Practical Links</h1>
+
+    <p class="subtitle">
+        Web Technology Practical Work
+    </p>
+
+
+    <!-- =========================
+         MAIN PROFILE BOX
+    ========================== -->
+
+    <div class="profile-box">
+
+
+        <!-- =========================
+             LEFT: PHOTO + NAME
+        ========================== -->
+
+        <div class="profile-section">
+
+            <h2>Profile</h2>
+
+            <!-- Replace profile.jpg with your image filename -->
+
+            <img
+                src="C:\Users\rudan\Downloads\Professional Circular Portrait of Indian Woman.png"
+                alt="Mili Atulbhai Rudani"
+                class="profile-image"
+            >
+
+            <div class="name">
+                Mili Atulbhai Rudani
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             RIGHT: PRACTICAL LINKS
+        ========================== -->
+
+        <div class="links-section">
+
+            <h2>Practical Links</h2>
+
+
+            <a href="https://rudannimili-99.github.io/Web-Tech-Practicals/practical-1/">
+                1. Practical-1 →
+            </a>
+
+
+            <a href="https://rudannimili-99.github.io/Web-Tech-Practicals/practical-2/">
+                2. Practical-2 →
+            </a>
+
+
+            <a href="https://rudannimili-99.github.io/Web-Tech-Practicals/practical-3/">
+                3. Practical-3 →
+            </a>
+
+
+            <a href="https://rudannimili-99.github.io/Web-Tech-Practicals/practical-4/">
+                4. Practical-4 →
+            </a>
+
+
+            <a href="https://rudannimili-99.github.io/Web-Tech-Practicals/practical-5/">
+                5. Practical-5 →
+            </a>
+
+
+            <a href="https://rudannimili-99.github.io/Web-Tech-Practicals/practical-6/">
+                6. Practical-6 →
+            </a>
+
+
+            <a href="https://rudannimili-99.github.io/Web-Tech-Practicals/practical-7/">
+                7. Practical-7 →
+            </a>
+
+
+            <a href="https://rudannimili-99.github.io/Web-Tech-Practicals/practical-8/">
+                8. Practical-8 →
+            </a>
+
+
+            <a href="https://rudannimili-99.github.io/Web-Tech-Practicals/practical-9/">
+                9. Practical-9 →
+            </a>
+
+
+            <a href="https://rudannimili-99.github.io/Web-Tech-Practicals/practical-10/">
+                10. Practical-10 →
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
