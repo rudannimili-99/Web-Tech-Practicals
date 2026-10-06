@@ -2,10 +2,449 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=index1.html">
-    <title>Practical 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 2 | Workshop Registration & Media</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f3ff;
+            color: #2e1065;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4c1d95, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        nav {
+            background: #2e1065;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #c4b5fd;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 25px;
+        }
+
+        section,
+        article,
+        aside {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(76, 29, 149, 0.12);
+        }
+
+        h2 {
+            color: #5b21b6;
+            border-bottom: 2px solid #c4b5fd;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #6d28d9;
+        }
+
+        fieldset {
+            border: 2px solid #c4b5fd;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        legend {
+            background: #5b21b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #c4b5fd;
+            border-radius: 6px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        button {
+            background: #6d28d9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4c1d95;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #c4b5fd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #5b21b6;
+            color: white;
+        }
+
+        figure {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        figure img {
+            max-width: 100%;
+            width: 360px;
+            border-radius: 10px;
+        }
+
+        figcaption {
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        video,
+        audio,
+        iframe {
+            max-width: 100%;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+        details {
+            background: #ede9fe;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #5b21b6;
+        }
+
+        address {
+            margin-top: 15px;
+        }
+
+        footer {
+            background: #2e1065;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 15px;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <p>Opening Practical 2...</p>
+
+<header>
+    <h1>Practical 2</h1>
+    <p>Workshop Registration &amp; Semantic HTML Multimedia</p>
+</header>
+
+<nav>
+    <a href="#registration">Registration</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#media">Media</a>
+    <a href="#about">About</a>
+</nav>
+
+<main>
+
+    <!-- ================= REGISTRATION ================= -->
+
+    <section id="registration">
+        <h2>Workshop Registration</h2>
+
+        <form>
+
+            <fieldset>
+                <legend>Participant Details</legend>
+
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Telephone:</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    pattern="[0-9]{10}"
+                    placeholder="10 digit mobile number"
+                    required
+                >
+
+                <label for="date">Workshop Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label>Gender:</label>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="other"> Other
+
+                <label for="course">Select Workshop:</label>
+                <select id="course" name="course">
+                    <option value="">-- Select --</option>
+                    <option>Web Development</option>
+                    <option>Python Programming</option>
+                    <option>Artificial Intelligence</option>
+                    <option>Cyber Security</option>
+                </select>
+
+                <label for="participants">Number of Participants:</label>
+                <input
+                    type="number"
+                    id="participants"
+                    name="participants"
+                    min="1"
+                    max="10"
+                >
+
+                <label>
+                    <input type="checkbox" required>
+                    I agree to the workshop terms and conditions.
+                </label>
+
+                <label for="message">Comments / Message:</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Enter your message">
+                </textarea>
+
+                <label for="file">Upload ID / Document:</label>
+                <input type="file" id="file" name="file">
+
+                <br>
+
+                <button type="submit">Register</button>
+                <button type="reset">Reset</button>
+
+            </fieldset>
+
+        </form>
+    </section>
+
+
+    <!-- ================= SCHEDULE ================= -->
+
+    <section id="schedule">
+
+        <h2>Workshop Schedule</h2>
+
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Activity</th>
+                <th>Speaker</th>
+            </tr>
+
+            <tr>
+                <td rowspan="2">10:00 AM - 12:00 PM</td>
+                <td>Web Development</td>
+                <td>Aarav Mehta</td>
+            </tr>
+
+            <tr>
+                <td>HTML &amp; CSS</td>
+                <td>Priya Shah</td>
+            </tr>
+
+            <tr>
+                <td>12:00 PM - 1:00 PM</td>
+                <td colspan="2">Lunch Break</td>
+            </tr>
+
+            <tr>
+                <td>1:00 PM - 3:00 PM</td>
+                <td>Python Programming</td>
+                <td>Rahul Patel</td>
+            </tr>
+        </table>
+
+    </section>
+
+
+    <!-- ================= MEDIA / BLOG ================= -->
+
+    <article id="media">
+
+        <header>
+            <h2>Getting Started with HTML5 Multimedia</h2>
+
+            <p>
+                Published on
+                <time datetime="2026-10-06">6 October 2026</time>
+            </p>
+        </header>
+
+
+        <!-- IMAGE -->
+
+        <section>
+            <h3>1. Image with Caption</h3>
+
+            <figure>
+                <img
+                    src="https://www.w3schools.com/html/img_girl.jpg"
+                    alt="Example image"
+                >
+
+                <figcaption>
+                    Figure 1: Example image used in the HTML5 multimedia section.
+                </figcaption>
+            </figure>
+        </section>
+
+
+        <!-- VIDEO -->
+
+        <section>
+            <h3>2. Video</h3>
+
+            <video width="360" height="203" controls>
+                <source
+                    src="https://www.w3schools.com/html/mov_bbb.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+
+        <!-- AUDIO -->
+
+        <section>
+            <h3>3. Audio</h3>
+
+            <audio controls>
+                <source
+                    src="https://www.w3schools.com/html/horse.mp3"
+                    type="audio/mpeg"
+                >
+
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+
+        <!-- IFRAME -->
+
+        <section>
+            <h3>4. Embedded Content</h3>
+
+            <iframe
+                src="campus-info.html"
+                width="360"
+                height="150"
+                title="Campus Information">
+            </iframe>
+        </section>
+
+
+        <!-- DETAILS -->
+
+        <section id="about">
+
+            <h3>About the Workshop</h3>
+
+            <details>
+                <summary>Read More</summary>
+
+                <p>
+                    This practical demonstrates semantic HTML5 elements,
+                    multimedia elements, forms, tables and embedded content.
+                </p>
+            </details>
+
+        </section>
+
+    </article>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        &copy; 2026 CodingPro &times; JG University
+    </p>
+
+    <address>
+        Contact:
+        <a href="mailto:info@codingpro.example" style="color:#c4b5fd;">
+            info@codingpro.example
+        </a>
+    </address>
+
+</footer>
+
 </body>
 </html>
