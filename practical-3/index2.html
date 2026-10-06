@@ -5,202 +5,205 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Styling | Experiment 3</title>
 
-  <style>
-    /* ---------- 1. Universal & element selectors ---------- */
-    * {
-      box-sizing: border-box;
-    }
+ <style>
+  * {
+    box-sizing: border-box;
+  }
 
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.5;
-      color: #e9d5ff;
-      background-color: #170b24;
-    }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #222;
+    background-color: white;
+  }
 
-    h1, h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 700;
-    }
+  h1,
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+  }
 
-    h2 {
-      color: #c084fc;
-      border-bottom: 2px solid #581c87;
-      padding-bottom: 4px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 1.1rem;
-    }
+  h2 {
+    color: #333;
+    border-bottom: 2px solid #999;
+    padding-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+  }
 
-    /* ---------- 2. Class & ID selectors ---------- */
-    .site-header {
-      position: sticky;
-      top: 0;
-      background: #2e1065;
-      color: #ffffff;
-      padding: 12px 24px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    }
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    background: #333;
+    color: #ffffff;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
 
-    .site-header h1 {
-      margin: 0;
-      font-size: 1.6rem;
-    }
+  .site-header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+  }
 
-    .badge {
-      background: #a855f7;
-      color: #ffffff;
-      font-size: 0.75rem;
-      font-weight: bold;
-      padding: 2px 8px;
-      border-radius: 999px;
-    }
+  .badge {
+    background: #555;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
 
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 16px 24px 60px;
-    }
+  /* Container */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 24px 60px;
+  }
 
-    #topics {
-      padding-left: 20px;
-    }
+  /* Topics */
+  #topics {
+    padding-left: 20px;
+  }
 
-    .highlight {
-      background-color: #3b1764;
-      font-weight: 600;
-      padding: 2px 5px;
-      border-radius: 4px;
-    }
+  .highlight {
+    background-color: #eeeeee;
+    font-weight: 600;
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
 
-    /* ---------- 3. Descendant, pseudo-class, pseudo-element ---------- */
-    #topics li a {
-      color: #c084fc;
-      text-decoration: none;
-    }
+  /* Links and pseudo selectors */
+  #topics li a {
+    color: #333;
+    text-decoration: none;
+  }
 
-    #topics li a:hover {
-      text-decoration: underline;
-      color: #f0abfc;
-    }
+  #topics li a:hover {
+    text-decoration: underline;
+    color: #666;
+  }
 
-    #topics li:nth-child(odd) {
-      color: #d8b4fe;
-    }
+  #topics li:nth-child(odd) {
+    color: #444;
+  }
 
-    #topics li:last-child::first-letter {
-      font-size: 1.5em;
-      color: #e879f9;
-    }
+  #topics li:last-child::first-letter {
+    font-size: 1.5em;
+    color: #555;
+  }
 
-    /* ---------- 4. Attribute selector ---------- */
-    input[type="text"] {
-      padding: 8px 10px;
-      width: 300px;
-      border: 1px solid #7e22ce;
-      border-radius: 4px;
-      background-color: #241034;
-      color: #ffffff;
-    }
+  /* Attribute selector */
+  input[type="text"] {
+    padding: 8px 10px;
+    width: 300px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    background-color: white;
+    color: #222;
+  }
 
-    input[type="text"]:focus {
-      outline: 2px solid #a855f7;
-    }
+  input[type="text"]:focus {
+    outline: 2px solid #555;
+  }
 
-    /* ---------- 5. Box model ---------- */
-    .box {
-      width: 360px;
-      padding: 20px;
-      border: 6px dashed #7e22ce;
-      margin: 20px;
-      background: #2e1065;
-      text-align: center;
-      border-radius: 8px;
-    }
+  /* Box model */
+  .box {
+    width: 360px;
+    padding: 20px;
+    border: 6px dashed #777;
+    margin: 20px;
+    background: #f5f5f5;
+    text-align: center;
+    border-radius: 8px;
+  }
 
-    /* ---------- 6. Positioning ---------- */
-    .pos-parent {
-      position: relative;
-      height: 150px;
-      background: #21102f;
-      border: 1px solid #581c87;
-    }
+  /* Positioning */
+  .pos-parent {
+    position: relative;
+    height: 150px;
+    background: #f5f5f5;
+    border: 1px solid #aaa;
+  }
 
-    .pos {
-      width: 110px;
-      padding: 10px;
-      color: #fff;
-      text-align: center;
-      font-size: 0.9rem;
-    }
+  .pos {
+    width: 110px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+  }
 
-    .static {
-      background: #4c1d95;
-    }
+  .static {
+    background: #555;
+  }
 
-    .relative {
-      background: #6b21a8;
-      position: relative;
-      top: 10px;
-      left: 130px;
-    }
+  .relative {
+    background: #666;
+    position: relative;
+    top: 10px;
+    left: 130px;
+  }
 
-    .absolute {
-      background: #86198f;
-      position: absolute;
-      right: 16px;
-      bottom: 16px;
-    }
+  .absolute {
+    background: #777;
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+  }
 
-    .fixed-help {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background: #7e22ce;
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 24px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
+  /* Fixed help button */
+  .fixed-help {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #333;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
 
-    /* ---------- 7. Card combining the concepts ---------- */
-    .card {
-      position: relative;
-      width: 340px;
-      padding: 24px;
-      background: #241034;
-      border: 1px solid #581c87;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
-    }
+  /* Course card */
+  .card {
+    position: relative;
+    width: 340px;
+    padding: 24px;
+    background: #f5f5f5;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
 
-    .card h3 {
-      margin-top: 8px;
-      color: #c084fc;
-    }
+  .card h3 {
+    margin-top: 8px;
+    color: #333;
+  }
 
-    .price {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #d8b4fe;
-      margin: 0;
-    }
+  .price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #444;
+    margin: 0;
+  }
 
-    .ribbon {
-      position: absolute;
-      top: -10px;
-      right: 16px;
-      background: #7e22ce;
-      color: #fff;
-      font-size: 0.75rem;
-      padding: 3px 10px;
-      border-radius: 4px;
-    }
+  .ribbon {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: #555;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
 </style>
 </head>
 
