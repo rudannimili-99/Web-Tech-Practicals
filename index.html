@@ -23,7 +23,7 @@
         }
 
         .container {
-            max-width: 950px;
+            max-width: 1000px;
             margin: auto;
         }
 
@@ -43,13 +43,15 @@
 
         .profile-box {
             display: grid;
-            grid-template-columns: 40% 60%;
+            grid-template-columns: 35% 65%;
             background: white;
             border: 2px solid #bda6dd;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(88, 55, 130, 0.15);
         }
+
+        /* PROFILE */
 
         .profile-section {
             text-align: center;
@@ -80,7 +82,7 @@
 
         .name {
             margin-top: 18px;
-            font-size: 25px;
+            font-size: 24px;
             line-height: 1.4;
             font-weight: bold;
             color: #503482;
@@ -96,31 +98,58 @@
             border-radius: 5px;
         }
 
+        /* PRACTICAL LINKS */
+
         .links-section {
             background: #ffffff;
             padding: 25px;
         }
 
-        .links-section a {
-            display: block;
-            text-decoration: none;
-            color: #62419a;
+        .practical {
             background: #f0e8fa;
-            padding: 11px 15px;
-            margin-bottom: 9px;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: bold;
             border-left: 4px solid #7652b8;
+            border-radius: 8px;
+            padding: 13px 15px;
+            margin-bottom: 12px;
             transition: 0.3s;
         }
 
-        .links-section a:hover {
-            background: #7652b8;
-            color: white;
-            padding-left: 22px;
+        .practical:hover {
+            background: #e7daf7;
             transform: translateX(3px);
         }
+
+        .practical-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #503482;
+            margin-bottom: 5px;
+        }
+
+        .description {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .practical a {
+            display: inline-block;
+            text-decoration: none;
+            background: #7652b8;
+            color: white;
+            padding: 7px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .practical a:hover {
+            background: #503482;
+        }
+
+        /* MOBILE */
 
         @media (max-width: 700px) {
 
@@ -143,12 +172,7 @@
             }
 
             .name {
-                font-size: 24px;
-                margin-bottom: 10px;
-            }
-
-            .links-section {
-                padding-bottom: 25px;
+                font-size: 23px;
             }
 
         }
@@ -169,13 +193,17 @@
 
     <div class="profile-box">
 
-        <!-- PROFILE -->
+        <!-- PROFILE SECTION -->
 
         <div class="profile-section">
 
             <h2>Profile</h2>
 
-            <img src="profiles.png" alt="Mili Atulbhai Rudani" class="profile-image">
+            <img
+                src="profiles.png"
+                alt="Mili Atulbhai Rudani"
+                class="profile-image"
+            >
 
             <div class="name">
                 Mili Atulbhai Rudani
@@ -184,51 +212,210 @@
         </div>
 
 
-        <!-- PRACTICAL LINKS -->
+        <!-- PRACTICAL SECTION -->
 
         <div class="links-section">
 
             <h2>Practical Links</h2>
 
-            <a href="practical-1/">
-                1. Practical-1 →
-            </a>
 
-            <a href="practical-2/">
-                2. Practical-2 →
-            </a>
+            <!-- PRACTICAL 1 -->
 
-            <a href="practical-3/">
-                3. Practical-3 →
-            </a>
+            <div class="practical">
 
-            <a href="practical-4/">
-                4. Practical-4 →
-            </a>
+                <div class="practical-title">
+                    1. Practical-1
+                </div>
 
-            <a href="practical-5/">
-                5. Practical-5 →
-            </a>
+                <div class="description">
+                    Create basic web pages using HTML structure, headings,
+                    paragraphs, lists, links, and images.
+                </div>
 
-            <a href="practical-6/">
-                6. Practical-6 →
-            </a>
+                <a href="practical-1/">
+                    View Practical →
+                </a>
 
-            <a href="practical-7/">
-                7. Practical-7 →
-            </a>
+            </div>
 
-            <a href="practical-8/">
-                8. Practical-8 →
-            </a>
 
-            <a href="practical-9/">
-                9. Practical-9 →
-            </a>
+            <!-- PRACTICAL 2 -->
 
-            <a href="practical-10/">
-                10. Practical-10 →
-            </a>
+            <div class="practical">
+
+                <div class="practical-title">
+                    2. Practical-2
+                </div>
+
+                <div class="description">
+                    Design web forms, tables, multimedia integration,
+                    and semantic HTML pages.
+                </div>
+
+                <a href="practical-2/">
+                    View Practical →
+                </a>
+
+            </div>
+
+
+            <!-- PRACTICAL 3 -->
+
+            <div class="practical">
+
+                <div class="practical-title">
+                    3. Practical-3
+                </div>
+
+                <div class="description">
+                    Apply CSS styling using selectors, colors, fonts,
+                    box model, and positioning techniques.
+                </div>
+
+                <a href="practical-3/">
+                    View Practical →
+                </a>
+
+            </div>
+
+
+            <!-- PRACTICAL 4 -->
+
+            <div class="practical">
+
+                <div class="practical-title">
+                    4. Practical-4
+                </div>
+
+                <div class="description">
+                    Design responsive layouts using Flexbox and CSS Grid.
+                </div>
+
+                <a href="practical-4/">
+                    View Practical →
+                </a>
+
+            </div>
+
+
+            <!-- PRACTICAL 5 -->
+
+            <div class="practical">
+
+                <div class="practical-title">
+                    5. Practical-5
+                </div>
+
+                <div class="description">
+                    Develop web pages using Bootstrap components
+                    and responsive utilities.
+                </div>
+
+                <a href="practical-5/">
+                    View Practical →
+                </a>
+
+            </div>
+
+
+            <!-- PRACTICAL 6 -->
+
+            <div class="practical">
+
+                <div class="practical-title">
+                    6. Practical-6
+                </div>
+
+                <div class="description">
+                    Implement SASS features including variables,
+                    nesting, mixins, and partials.
+                </div>
+
+                <a href="practical-6/">
+                    View Practical →
+                </a>
+
+            </div>
+
+
+            <!-- PRACTICAL 7 -->
+
+            <div class="practical">
+
+                <div class="practical-title">
+                    7. Practical-7
+                </div>
+
+                <div class="description">
+                    Write JavaScript programs using variables,
+                    operators, conditions, and loops.
+                </div>
+
+                <a href="practical-7/">
+                    View Practical →
+                </a>
+
+            </div>
+
+
+            <!-- PRACTICAL 8 -->
+
+            <div class="practical">
+
+                <div class="practical-title">
+                    8. Practical-8
+                </div>
+
+                <div class="description">
+                    Create interactive web pages using functions,
+                    arrays, objects, and DOM manipulation.
+                </div>
+
+                <a href="practical-8/">
+                    View Practical →
+                </a>
+
+            </div>
+
+
+            <!-- PRACTICAL 9 -->
+
+            <div class="practical">
+
+                <div class="practical-title">
+                    9. Practical-9
+                </div>
+
+                <div class="description">
+                    Implement event handling and form validation
+                    using JavaScript.
+                </div>
+
+                <a href="practical-9/">
+                    View Practical →
+                </a>
+
+            </div>
+
+
+            <!-- PRACTICAL 10 -->
+
+            <div class="practical">
+
+                <div class="practical-title">
+                    10. Practical-10
+                </div>
+
+                <div class="description">
+                    Develop a mini-project integrating HTML, CSS,
+                    Bootstrap, and SASS.
+                </div>
+
+                <a href="practical-10/">
+                    View Practical →
+                </a>
+
+            </div>
 
         </div>
 
